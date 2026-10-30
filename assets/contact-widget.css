@@ -1,0 +1,88 @@
+/* Ventana de contacto (QR en escritorio / botones en móvil).
+   Colores: cambia solo estas variables. */
+:root{
+  --cw-accent:#ff6a13;       /* color principal (bordes, iconos, hover) */
+  --cw-accent-text:#ffffff;  /* texto sobre el color principal en hover */
+  --cw-panel:#171c19;        /* fondo de la ventana */
+  --cw-card:#0f1311;         /* fondo de tarjetas QR y mensaje */
+  --cw-line:#27302b;         /* bordes */
+  --cw-text:#f3f5f3;
+  --cw-muted:#b0bab3;
+  --cw-font:Inter,system-ui,sans-serif;
+  --cw-head-font:Oswald,Impact,sans-serif;
+}
+.cw{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(0,0,0,.7);backdrop-filter:blur(6px)}
+.cw.on{display:flex}
+.cw-box{position:relative;width:min(100%,520px);max-height:92vh;overflow:auto;background:var(--cw-panel);border:1px solid var(--cw-line);border-top:4px solid var(--cw-accent);border-radius:18px;padding:34px 28px 28px;text-align:center;box-shadow:0 40px 90px -20px #000;color:var(--cw-text)}
+.cw-box h3{margin:0 0 6px;font:600 26px var(--cw-head-font);letter-spacing:.04em}
+.cw-box p{margin:0 0 22px;color:var(--cw-muted);font:400 15px var(--cw-font)}
+.cw-x{position:absolute;top:10px;right:12px;width:38px;height:38px;border:0;border-radius:50%;background:#222a26;color:#fff;font:400 22px/1 var(--cw-font);cursor:pointer}
+.cw-x:hover{background:var(--cw-accent)}
+
+/* Móvil: botones directos */
+.cw-list{display:flex;flex-direction:column;gap:12px}
+.cw-opt{display:flex;align-items:center;gap:14px;padding:16px 22px;border:2px solid var(--cw-accent);border-radius:999px;background:rgba(255,106,19,.1);color:#fff;text-decoration:none;font:700 15px var(--cw-font);letter-spacing:.1em;text-align:left}
+.cw-opt:hover{background:var(--cw-accent);color:var(--cw-accent-text)}
+.cw-opt svg{width:22px;height:22px;fill:var(--cw-accent);flex:none}
+.cw-opt:hover svg{fill:var(--cw-accent-text)}
+.cw-opt small{display:block;font:500 12px var(--cw-font);letter-spacing:.02em;color:var(--cw-muted);margin-top:2px}
+.cw-opt:hover small{color:var(--cw-accent-text)}
+
+/* Escritorio: códigos QR */
+.cw-qr{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.cw-qr.three{grid-template-columns:repeat(3,1fr)}
+.cw-box:has(.three){width:min(100%,600px)}
+.cw-qr.one{grid-template-columns:minmax(0,260px);justify-content:center}
+.cw-box:has(.one){width:min(100%,400px)}
+.cw-q{background:var(--cw-card);border:1px solid var(--cw-line);border-radius:14px;padding:16px 10px}
+.cw-q .code{background:#fff;border-radius:10px;padding:8px;line-height:0}
+.cw-q .code svg,.cw-q .code img{width:100%;height:auto}
+.cw-q b{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:12px;font:700 13px var(--cw-font);letter-spacing:.1em}
+.cw-q b svg{width:16px;height:16px;fill:var(--cw-accent)}
+.cw-q small{display:block;margin-top:4px;font:400 11px var(--cw-font);color:var(--cw-muted);word-break:break-all}
+
+/* Mensaje compuesto («YOUR MESSAGE IS READY») */
+.cw-msg{margin:0 0 14px;padding:14px 16px;background:var(--cw-card);border:1px solid var(--cw-line);border-left:3px solid var(--cw-accent);border-radius:12px;text-align:left;font:400 14px/1.5 var(--cw-font);color:var(--cw-text);max-height:170px;overflow:auto}
+.cw-hint{margin-top:18px!important;margin-bottom:0!important;font-size:13px!important}
+.cw-hint a{color:var(--cw-accent)}
+
+/* Adaptación Milton Dávila: mismo flujo del kit, integrado al sistema editorial blanco. */
+:root{--cw-accent:#0076df;--cw-accent-text:#fff;--cw-panel:#fff;--cw-card:#f7f8fa;--cw-line:#e5e7eb;--cw-text:#071a49;--cw-muted:#5f6368;--cw-font:Lato,Arial,sans-serif;--cw-head-font:Lato,Arial,sans-serif}
+.cw{background:rgba(7,26,73,.65);backdrop-filter:blur(4px)}
+.cw-box{border-top-color:var(--cw-accent);box-shadow:0 24px 70px rgba(7,26,73,.24)}
+.cw-box h3{font-weight:300;letter-spacing:-.02em}
+.cw-x{background:#f7f8fa;color:var(--cw-text)}
+.cw-opt{background:#f7f8fa;color:var(--cw-text)}
+.cw-opt small{color:var(--cw-muted)}
+.cw-q{background:#fff}
+.cw-msg{color:var(--cw-text)}
+.cw{background:rgba(0,0,0,.72)}
+:root{--cw-accent:#ff6a13;--cw-accent-text:#0b0d0c;--cw-panel:#171c19;--cw-card:#0f1311;--cw-line:#27302b;--cw-text:#f3f5f3;--cw-muted:#b0bab3;--cw-font:Lato,Arial,sans-serif;--cw-head-font:Lato,Arial,sans-serif}
+.cw-box{box-shadow:0 40px 90px -20px #000}
+.cw-x{background:#222a26;color:#fff}
+.cw-opt{background:rgba(255,106,19,.1);color:#fff}
+.cw-opt small{color:#b0bab3}
+.cw-q{background:#0f1311}
+
+/* Panel QR alineado con la identidad blanca de Milton. */
+.cw{background:rgba(255,255,255,.84);backdrop-filter:blur(6px)}
+.cw-box{background:#fff;border-color:#e5e7eb;border-top-color:#0076df;color:#071a49;box-shadow:0 30px 80px rgba(7,26,73,.2)}
+.cw-box:before{content:"";display:block;width:min(190px,72%);height:48px;margin:0 auto 16px;background:url('logos/web/logo-horizontal.png') center/contain no-repeat}
+.cw-box h3{color:#071a49}
+.cw-box p{color:#5f6368}
+.cw-x{background:#f7f8fa;color:#071a49}
+.cw-x:hover{background:#0076df;color:#fff}
+.cw-opt{background:#f7f8fa;color:#071a49;border-color:#0076df}
+.cw-opt small{color:#5f6368}
+.cw-opt svg{fill:#0076df}
+.cw-opt:hover{background:#0076df;color:#fff}
+.cw-opt:hover small{color:#fff}
+.cw-q{background:#f7f8fa;border-color:#e5e7eb}
+.cw-q .code{width:min(100%,160px);margin:0 auto}
+.cw-q .code svg,.cw-q .code img{display:block;width:100%;height:auto}
+.cw-q b{color:#071a49}
+.cw-q b svg{fill:#0076df}
+.cw-q small{color:#5f6368}
+.cw-msg{background:#f7f8fa;border-color:#e5e7eb;border-left-color:#0076df;color:#071a49}
+.cw-hint a{color:#0076df!important}
+

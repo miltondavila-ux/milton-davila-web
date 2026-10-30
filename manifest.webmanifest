@@ -1,0 +1,9 @@
+{
+  "name": "Milton Dávila | Soluciones con IA",
+  "short_name": "Milton Dávila",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#071a49",
+  "icons": [{"src":"/assets/logos/web/isotipo.png","sizes":"512x512","type":"image/png"}]
+}
