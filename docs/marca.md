@@ -32,3 +32,12 @@ Páginas web · SEO y AEO (web y redes) · Agentes de voz con IA · Integracione
 
 ## Plataformas creadas por Milton
 10MinutesWebsite · La Solución Web · El HUB · SEO Total (creador de artículos y contenido para redes; Milton lo describe como el más avanzado de la industria vía SEO).
+
+## Reglas de identidad del logo (27–30/10/2026)
+- Logo principal sobre fondo claro: `logo-horizontal.png` (M de color + nombre en negro). Nunca recolorear, deformar ni rotar.
+- Sobre fondo oscuro: `logo-horizontal-fondo-oscuro.png` (M de color + nombre blanco) o `logo-horizontal-blanco.png` (monocromo blanco).
+- Monocromo negro: `logo-horizontal-negro.png`.
+- Isotipo (solo la M): `isotipo.png`, para favicon y marcas de agua.
+- Espectro de la M: rojo `#D83C2D` → naranja `#F08A24` → amarillo `#FFCF4D` → azul `#009FE3` / `#276DB5` → verde `#84C38C`.
+- Wordmark: tipografía geométrica ligera e inclinada (estilo Gotham Light Italic). En la web se acompaña con Montserrat 200–300 y cursiva para el énfasis.
+- Tinta de texto: negro neutro `#0D0E13`; secciones oscuras en negro `#0B0C11` (no azul marino), para que el negro del wordmark y el color de la M manden.
