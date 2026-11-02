@@ -119,6 +119,8 @@ for fname, canon, og in PAGES:
         txt = json.dumps(x, ensure_ascii=False)
         for ref in re.findall(r'\{"@id": "([^"]+)"\}', txt):
             check(ref in ids, f"[{n}] el schema referencia {ref} que no existe")
+        if x["@type"] == "ProfessionalService":
+            check("serviceType" not in x and "availableLanguage" not in x, f"[{n}] ProfessionalService con propiedades que Schema.org no reconoce (serviceType/availableLanguage)")
         check("mailto:" not in txt, f"[{n}] el email del schema debe ir sin mailto:")
         check("www.miltondavila.com" not in txt, f"[{n}] URL con www en el schema")
         check("estratega" not in txt.lower() and "ingeniero" not in txt.lower(), f"[{n}] palabra no aprobada en el schema")
