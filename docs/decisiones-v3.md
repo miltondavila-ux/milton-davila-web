@@ -35,6 +35,7 @@ Verificador automático: `python3 docs/verificar-decisiones.py` (debe terminar e
 - Tarjeta "Quiero construir algo propio para mi empresa" ahora es la 1.ª de 6 (Milton dijo "ejecuta lo que creas conveniente"). Texto: "Cuéntame cómo trabajas y lo construyo: sistemas, integraciones y agentes de IA hechos para tu operación." Se evitó "no existe en el mercado" porque Milton dijo que su experiencia es sobre todo con realtors y soluciones que ya existen.
 - Pendiente de decidir: título/descripción de Sobre mí ("Estratega de IA y SEO"); FAQ "¿Qué hace Milton Dávila?" (dice "estratega"); canonical/OG/sitemap usan www pero www redirige a miltondavila.com.
 - Capacidades que Milton confirmó: plataformas propias 10MinutesWebsite, Hub.lasolucionweb.net, SEO Total Artículos, SEO Total Redes, Blog AI, creador de páginas web posicionables, creador de agentes de IA para WhatsApp, etc.
+- Ícono de iPhone (apple-touch-icon.png, 180×180): M de colores sobre azul marino #071a49 (elegido por Milton, opción 1). Íconos de Android/manifest (192, 512, maskable) siguen con fondo blanco.
 - Menú móvil con QR (assets/menu-v3.js): QR a https://miltondavila.com/, como tarjeta de presentación.
 
 ## Imágenes aprobadas
