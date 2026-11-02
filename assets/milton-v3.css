@@ -347,3 +347,30 @@ html.agenda-open{overflow:hidden}
 }
 @media(max-width:380px){.menu-card{flex-direction:column;text-align:center}}
 @media(max-width:520px){.top img{width:136px}.top nav .btn.sm{padding-left:16px;padding-right:16px;font-size:.8rem}.menu-btn{margin-left:8px}}
+
+/* Galería «Detrás de la marca» con foto horizontal */
+.gal.two{grid-template-columns:1fr 1.6fr;align-items:stretch}
+.gal.two figure{height:440px}
+.gal.two img{height:100%;aspect-ratio:auto}
+@media(max-width:900px){.gal.two{grid-template-columns:1fr}.gal.two figure{height:auto}.gal.two img{height:auto;aspect-ratio:4/3}}
+.gal.two .wide{grid-column:1/-1;height:auto}
+.gal.two .wide img{height:auto;aspect-ratio:2/1}
+@media(max-width:900px){.gal.two .wide img{aspect-ratio:16/9}}
+
+/* Sobre mí: portada con la foto ancha completa y texto blanco sobre degradado azul marino */
+.hero.about-hero{background:#071a49}
+.hero.about-hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(7,26,73,.88) 0%,rgba(7,26,73,.7) 34%,rgba(7,26,73,.18) 58%,rgba(7,26,73,0) 70%)}
+.hero.about-hero .herobg{object-position:72% 50%}
+.hero.about-hero h1,.hero.about-hero .lead,.hero.about-hero .kick{color:#fff;text-shadow:0 2px 16px rgba(7,26,73,.55)}
+.hero.about-hero h1 em{color:#8fd6f7}
+.hero.about-hero .lead{font-size:1.05rem;line-height:1.65}
+.hero.about-hero .crumbs,.hero.about-hero .crumbs span,.hero.about-hero .crumbs a{color:rgba(255,255,255,.9);text-shadow:0 1px 8px rgba(7,26,73,.55)}
+@media(min-width:901px){.hero.about-hero{aspect-ratio:2000/1116;max-height:800px}}
+@media(max-width:900px){
+ .hero.about-hero::before{display:none}
+ .hero.about-hero .herobg{order:0;height:auto;aspect-ratio:4/5;object-position:84% 50%;-webkit-mask-image:linear-gradient(#000 82%,transparent);mask-image:linear-gradient(#000 82%,transparent)}
+ .hero.about-hero .sh{order:1;margin-top:-18px;padding-top:0;padding-bottom:34px;min-height:0}
+ .hero.about-hero .crumbs{display:none}
+ .hero.about-hero h1{font-size:clamp(2rem,9vw,2.6rem)}
+ .hero.about-hero h1,.hero.about-hero .lead,.hero.about-hero .kick{text-shadow:none}
+}

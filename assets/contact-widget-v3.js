@@ -7,7 +7,8 @@
     callLabel: '+1 (305) 206-2675',
     textPhone: '13052062675',
     textLabel: '+1 (305) 206-2675',
-    email: 'info@miltondavila.com',
+    email: 'info@miltondavila.net',          // dirección real: aquí llegan los correos
+    emailLabel: 'info@miltondavila.com',     // lo que se muestra al visitante
     defaultMessage: 'Hola Milton, quiero conversar sobre un problema de mi negocio',
     emailSubject: 'Consulta para Milton Dávila',
     thankYouUrl: '',                 // p. ej. '/thank-you/'; vacío = no redirigir
@@ -41,7 +42,7 @@
     map: '<svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>'
   };
   var names = C.names;
-  var sub = { call: C.callLabel, sms: C.textLabel, wa: C.textLabel, mail: C.email };
+  var sub = { call: C.callLabel, sms: C.textLabel, wa: C.textLabel, mail: C.emailLabel || C.email };
 
   var box = document.createElement('div');
   box.className = 'cw'; box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true');

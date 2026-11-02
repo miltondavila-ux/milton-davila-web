@@ -44,6 +44,7 @@ for t in [
     "¿Qué es un CRM y para qué sirve?",
     "¿Cuánto cuesta trabajar con Milton?",
     "Desplegamos y acompañamos",
+    "alrededor de lo que tu negocio necesita.",
     "Cuéntame cómo trabajas y lo construyo: sistemas, integraciones y agentes de IA hechos para tu operación.",
     "Lo instalo dentro de tu operación, lo medimos y lo mejoramos contigo.",
     "Sí. Me conecto a tu CRM, correo, teléfono, calendarios y bases de datos, y construyo lo que falte para que tu equipo deje de copiar datos a mano.",
@@ -65,6 +66,12 @@ check('tidycal.com/miltondavila/consulta-1-hora-con-milton' in src, 'Falta el en
 check('<title>Milton Dávila | Sistemas, IA y automatización para empresas</title>' in src, 'Título SEO distinto al aprobado')
 check('Tu negocio necesita una solución tecnológica que funcione' in src[:src.index('</head>')], 'El alt de la imagen OG no coincide con el titular')
 check(os.path.exists(os.path.join(ROOT, 'assets/og/og-home.jpg')), 'Falta la imagen OG')
+# Posicionamiento de implementación, URL sin www y correo enmascarado
+about_src0 = open(os.path.join(ROOT, "about-v3.html"), encoding="utf-8").read()
+check('<title>Quién es Milton Dávila | Ingeniero de implementación en Miami</title>' in about_src0, 'El título de Sobre mí debe hablar de implementación')
+check('estratega' not in src.lower() and 'estratega' not in about_src0.lower(), 'Quedó la palabra «estratega» en las páginas')
+check('www.miltondavila.com' not in src and 'www.miltondavila.com' not in about_src0, 'Quedó una URL con www (la oficial es https://miltondavila.com)')
+check('href="mailto:info@miltondavila.net">info@miltondavila.com<' in src, 'El correo del pie debe verse .com y enviar a .net')
 # Menú móvil con QR (tarjeta de presentación)
 about_src = open(os.path.join(ROOT, "about-v3.html"), encoding="utf-8").read()
 check(os.path.exists(os.path.join(ROOT, 'assets/menu-v3.js')), 'Falta assets/menu-v3.js (menú móvil con QR)')

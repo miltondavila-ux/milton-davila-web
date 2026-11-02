@@ -38,6 +38,18 @@ Verificador automático: `python3 docs/verificar-decisiones.py` (debe terminar e
 - Íconos de app (iPhone y Android): logo 6 (Isotipo original, M de colores) sobre azul marino #071a49, elegido por Milton. Archivos: apple-touch-icon.png (180), icon-192.png, icon-512.png, icon-maskable-512.png. Favicon del navegador sin cambios. Los anteriores (M sobre blanco) están en el scratchpad de la sesión del 2026-11-02.
 - Menú móvil con QR (assets/menu-v3.js): QR a https://miltondavila.com/, como tarjeta de presentación.
 
+## Cambios del 2026-11-02 (pendientes de publicar)
+- Eslogan del pie (home y Sobre mí): "Soluciones digitales construidas alrededor de lo que tu negocio necesita." (antes decía "del problema real de tu negocio").
+- Sobre mí · «Detrás de la marca»: 3 fotos, `familia/pareja-parque` (la de naranja), `familia/sofa-con-hijos` y, ancha abajo, `familia/corriendo-playa` (la familia corriendo en la playa; Milton la mandó). Milton autorizó usar fotos con sus hijos. `acuario-familia` quedó sin usar en la página.
+- Sobre mí · portada (APROBADA por Milton, "eso!"): foto ancha `playa/atardecer-agachado-ancho` COMPLETA a todo el ancho (sin recortar), con texto en blanco y degradado azul marino solo a la izquierda. NO usar velo blanco (Milton: "ese blanco no ayuda"). En celular (decidido por Milton, "trabájala"): la foto va ARRIBA, en formato 4:5 centrada en él (se recortan los lados de la arena, se ve su cuerpo entero y el sol), y se funde en azul marino con el texto blanco debajo.
+- Nombre de la app instalable (manifest `name`): "Milton Dávila".
+
+## Decisiones del 2026-11-02 (tarde, pendientes de publicar)
+- Posicionamiento: ya no se usa «estratega». Título de Sobre mí: «Quién es Milton Dávila | Ingeniero de implementación en Miami». FAQ «¿Qué hace Milton Dávila?», schema (jobTitle/description) y llms.txt hablan de ingeniero de implementación.
+- URL oficial SIN www: https://miltondavila.com (www redirige). Canonical, OG, schema, sitemap, robots y llms.txt actualizados.
+- Correo enmascarado: se MUESTRA info@miltondavila.com pero los enlaces mailto y el botón EMAIL del kit envían a info@miltondavila.net (el buzón real). Si alguien escribe el .com a mano rebota: crear un reenvío info@miltondavila.com → info@miltondavila.net en el hosting de correo.
+- Los clientes de Milton son pequeños negocios/profesionales: las pruebas (casos) deben ser de ese tamaño.
+
 ## Imágenes aprobadas
 - HERO: `assets/fotos/ia/hero-sonrisa-qr` (brazos cruzados, QR en la camiseta).
 - Sección 4: `assets/fotos/ia/reunion-qr` (sala de reuniones, QR en la camiseta).

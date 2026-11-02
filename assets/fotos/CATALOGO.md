@@ -15,7 +15,7 @@ Fotos originales sin recortes: solo redimensionadas (máx. 2200 px) y convertida
 | `cotidiano/` | 2 | Selfie con capucha y corriendo |
 | `familia/` | 6 | Con esposa e hijos |
 | `evento/` | 15 | En el escenario, diciembre 2023. Presentación "Conecta Conversa Convierte" |
-| `ia/` | 3 | Imágenes que parecen generadas con IA (cyborg, retratos estilizados). Solo usar si se indica que son IA |
+| `ia/` | 3+ | Imágenes que parecen generadas con IA (cyborg, retratos estilizados, hero y reunión con QR, `balcon-lago`). Solo usar si se indica que son IA |
 
 ## Dónde va cada foto (propuesta)
 
@@ -41,3 +41,9 @@ Fotos originales sin recortes: solo redimensionadas (máx. 2200 px) y convertida
   (`familia/playa-con-esposa`, `estadio-con-esposa`) y las del evento. Las verticales van en **columnas de altura completa**
   (mitad de la pantalla, de borde a borde), sin marcos ni círculos.
 - Las fotos de `evento/` son 5:6, no panorámicas: en banda ancha se muestran con el foco en Milton, sin cortar su figura.
+
+## Guardadas sin usar (2026-11-02)
+- `ia/balcon-lago` (2000×1116, + versiones 800/1200/1600): Milton en un balcón de madera con un lago y montañas al atardecer, camiseta beige. Guardada a pedido de Milton; todavía no está en ninguna página.
+- `familia/acuario-familia`: sin uso desde que la tercera foto de «Detrás de la marca» pasó a ser `familia/corriendo-playa`.
+- `familia/corriendo-playa` (+800/1200): la familia corriendo por la playa; tercera foto de «Detrás de la marca».
+- `playa/atardecer-agachado-ancho` (+800/1200/1600): foto ancha de la portada de «Sobre mí».
