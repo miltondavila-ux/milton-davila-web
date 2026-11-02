@@ -1,11 +1,11 @@
 # Milton Dávila
 
-> Milton Dávila es estratega de IA, SEO y automatización, con base en Miami-Dade, Florida. Ayuda a empresas y profesionales de Estados Unidos e Hispanoamérica a aparecer en Google y en las respuestas de la inteligencia artificial (SEO y AEO), a atender mejor a sus clientes y a ahorrar tiempo con sistemas, CRM y automatización. Atiende en español.
+> Milton Dávila es ingeniero de implementación (forward deployed engineer), con base en Miami-Dade, Florida. Trabaja dentro de las empresas para construir, conectar y poner en marcha sistemas, CRM, automatizaciones, integraciones y agentes de IA, y ayuda a empresas y profesionales de Estados Unidos e Hispanoamérica a aparecer en Google y en las respuestas de la inteligencia artificial (SEO y AEO). Atiende en español.
 
 ## Páginas principales
 
-- [Inicio](https://www.miltondavila.com/): problemas que resuelve, sectores que atiende, sesiones privadas (con agenda), reseñas y preguntas frecuentes.
-- [Quién es Milton Dávila](https://www.miltondavila.com/about.html): trayectoria, forma de trabajar, plataformas que creó y reseñas.
+- [Inicio](https://miltondavila.com/): problemas que resuelve, sectores que atiende, sesiones privadas (con agenda), reseñas y preguntas frecuentes.
+- [Quién es Milton Dávila](https://miltondavila.com/about.html): trayectoria, forma de trabajar, plataformas que creó y reseñas.
 - [Blog](https://blog.miltondavila.com): artículos y guías de marketing digital y automatización.
 
 ## Qué hace
