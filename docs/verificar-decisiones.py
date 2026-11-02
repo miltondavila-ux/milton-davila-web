@@ -43,6 +43,9 @@ for t in [
     "propias: 10MinutesWebsite, La Solución Web, El HUB y SEO Total",
     "¿Qué es un CRM y para qué sirve?",
     "¿Cuánto cuesta trabajar con Milton?",
+    "Desplegamos y acompañamos",
+    "Lo instalo dentro de tu operación, lo medimos y lo mejoramos contigo.",
+    "Sí. Me conecto a tu CRM, correo, teléfono, calendarios y bases de datos, y construyo lo que falte para que tu equipo deje de copiar datos a mano.",
 ]:
     check(t in body, f"Falta el texto aprobado: {t[:70]}")
 
@@ -61,6 +64,12 @@ check('tidycal.com/miltondavila/consulta-1-hora-con-milton' in src, 'Falta el en
 check('<title>Milton Dávila | Sistemas, IA y automatización para empresas</title>' in src, 'Título SEO distinto al aprobado')
 check('Tu negocio necesita una solución tecnológica que funcione' in src[:src.index('</head>')], 'El alt de la imagen OG no coincide con el titular')
 check(os.path.exists(os.path.join(ROOT, 'assets/og/og-home.jpg')), 'Falta la imagen OG')
+# Menú móvil con QR (tarjeta de presentación)
+about_src = open(os.path.join(ROOT, "about-v3.html"), encoding="utf-8").read()
+check(os.path.exists(os.path.join(ROOT, 'assets/menu-v3.js')), 'Falta assets/menu-v3.js (menú móvil con QR)')
+check("Soy ingeniero de implementación (forward deployed engineer): trabajo dentro de tu empresa para construir, conectar y poner en marcha las herramientas que necesita." in about_src, 'Falta la presentación aprobada en Sobre mí')
+check('assets/menu-v3.js' in src and 'assets/menu-v3.js' in about_src, 'Falta cargar menu-v3.js en la home o en Sobre mí')
+check("https://miltondavila.com/" in open(os.path.join(ROOT, 'assets/menu-v3.js'), encoding="utf-8").read(), 'El QR del menú no apunta a https://miltondavila.com/')
 check(os.path.exists(os.path.join(ROOT, 'assets/screenshots/home-movil.png')), 'Falta la captura móvil del manifest')
 # Eliminado
 check('id="soluciones"' not in src, "Reapareció la sección de servicios (#soluciones)")
