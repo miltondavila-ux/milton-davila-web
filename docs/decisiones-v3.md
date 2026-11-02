@@ -71,6 +71,17 @@ Verificador automático: `python3 docs/verificar-decisiones.py` (debe terminar e
 - Schema: email sin `mailto:`, `url` del HUB en la marca, `serviceType` en el negocio.
 - Texto reducido en Sobre mí (portada, «Una historia de evolución», intro de plataformas).
 
+## Verificación y analítica (2026-11-02)
+- Google Search Console: `<meta name="google-site-verification" content="0oY5QsV_KrcmhCDnGydMDdyDD-YTuLB7_HaIJm8OBhQ">` en el `<head>` de las dos páginas (Google exige `<head>`, no `<body>`).
+- Google Analytics 4: etiqueta gtag `G-GLQKNHSCNW` en el `<head>` de las dos páginas.
+- Bing Webmaster: pendiente. Milton pegó dos veces la misma etiqueta de Google; Bing usa `<meta name="msvalidate.01" content="...">`.
+
+## TidyCal optimizado (2026-11-02, autorizado por Milton, hecho desde la vista lateral)
+- 10 min (`10-minutos-con-milton-davila`): «Sesión express de 10 minutos con Milton Dávila»; primer párrafo: «Una llamada corta para contarme qué está frenando tu negocio y ver cómo puedo ayudarte.»
+- 20 min (`20-minutos-con-milton`): «Sesión de preguntas de 20 minutos con Milton Dávila»; encabezado «Sesión de preguntas de 20 minutos»; párrafo sobre sistemas/CRM, automatización, IA, web y Google/ChatGPT.
+- 60 min (`consulta-1-hora-con-milton`): «Sesión de estrategia de 60 minutos con Milton Dávila»; «revisamos tu operación, definimos qué construir y sales con pasos concretos».
+- Los nombres de la página (URL) no se tocaron. Quedan sin tocar los otros 5 tipos de reserva.
+
 ## Imágenes aprobadas
 - HERO: `assets/fotos/ia/hero-sonrisa-qr` (brazos cruzados, QR en la camiseta).
 - Sección 4: `assets/fotos/ia/reunion-qr` (sala de reuniones, QR en la camiseta).
