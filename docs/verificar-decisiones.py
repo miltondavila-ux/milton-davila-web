@@ -44,6 +44,7 @@ for t in [
     "¿Qué es un CRM y para qué sirve?",
     "¿Cuánto cuesta trabajar con Milton?",
     "Desplegamos y acompañamos",
+    "Cuéntame cómo trabajas y lo construyo: sistemas, integraciones y agentes de IA hechos para tu operación.",
     "Lo instalo dentro de tu operación, lo medimos y lo mejoramos contigo.",
     "Sí. Me conecto a tu CRM, correo, teléfono, calendarios y bases de datos, y construyo lo que falte para que tu equipo deje de copiar datos a mano.",
 ]:
