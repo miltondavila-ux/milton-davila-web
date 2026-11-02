@@ -56,6 +56,21 @@ Verificador automático: `python3 docs/verificar-decisiones.py` (debe terminar e
 
 - Sección «Conoce mi HUB» (pedida por Milton 2026-11-02) en la home (antes de Sesiones privadas) y en Sobre mí (antes de Opiniones): título «Conoce mi HUB.», botón «Conocer mi HUB →» a https://hub.lasolucionweb.net, imagen `fotos/hub/hub-aplicaciones` (maqueta del panel «Mis aplicaciones» que Milton mandó, SIN fondo: recortada con transparencia a pedido suyo; sombra suave por CSS). El HUB reúne las aplicaciones de Milton: crear artículos, automatizar redes sociales, crear agentes de IA para atender clientes.
 
+## Tono de comunicación (2026-11-02, pedido de Milton)
+- «Forward deployed engineer» NO se nombra ni se dice «soy ingeniero». Es la vara del nivel: lenguaje elevado, técnico y directo, orientado a ejecución y resultados (referencia de tono: iqthink.com: frases cortas, «de la estrategia al lanzamiento», «cosas que funcionan»).
+- Sobre mí · portada: «Diseño, construyo y despliego sistemas, integraciones e IA dentro de tu empresa, de la estrategia a la operación. Más de veinte años haciendo que las cosas funcionen.»
+- Título Sobre mí: «Quién es Milton Dávila | Sistemas e IA a la medida». Cargo (schema): «Sistemas, IA y automatización para empresas». FAQ «¿Qué hace Milton Dávila?», descripciones, schema, llms.txt, sitemap y manifest actualizados con el mismo lenguaje.
+- Regla: si se cambia un texto, se cambia también en SEO/AEO (title, meta, OG, Twitter, schema, FAQ, llms.txt, sitemap, manifest).
+
+## Auditoría total (2026-11-02, pendiente de publicar)
+- Verificadores: `python3 docs/verificar-decisiones.py` (textos/imágenes aprobados) y `python3 docs/verificar-seo.py` (SEO, AEO, schema, OG, íconos; necesita Pillow). Ambos deben terminar en 0 fallos antes de publicar.
+- Responsive: probado a 320, 360, 390, 430, 600, 768, 900, 901, 1024, 1280, 1440 y 1920 px en las dos páginas: sin desbordes, sin imágenes deformadas, sin texto cortado, sin botones bajos.
+- Portadas en celular usan fotos ya recortadas 4:5 (`*-m-640.webp`, `*-m-900.webp`) con `<picture>` y precarga por tamaño de pantalla (mejor LCP).
+- Ventana de contacto: compacta en pantallas bajas (≤700 px de alto) y bloquea el scroll de fondo. Ventana de agenda: el aviso «Cargando calendario…» se queda hasta que TidyCal dibuja el calendario.
+- OG de Sobre mí nueva: `assets/og/og-about-2.jpg` (nombre nuevo para forzar a WhatsApp/LinkedIn/Facebook a actualizar la vista previa). Capturas de la app (`assets/screenshots/`) regeneradas con el diseño actual.
+- Schema: email sin `mailto:`, `url` del HUB en la marca, `serviceType` en el negocio.
+- Texto reducido en Sobre mí (portada, «Una historia de evolución», intro de plataformas).
+
 ## Imágenes aprobadas
 - HERO: `assets/fotos/ia/hero-sonrisa-qr` (brazos cruzados, QR en la camiseta).
 - Sección 4: `assets/fotos/ia/reunion-qr` (sala de reuniones, QR en la camiseta).

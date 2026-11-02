@@ -431,3 +431,18 @@ html.agenda-open{overflow:hidden}
 .hubshot img{display:block;width:100%;height:auto;filter:drop-shadow(0 22px 26px rgba(7,26,73,.28))}
 @media(max-width:900px){.hubgrid{grid-template-columns:1fr;gap:30px}}
 
+
+/* Celular: las portadas usan la foto ya recortada en 4:5, centrada en él */
+@media(max-width:900px){.hero.home-hero .herobg,.hero.about-hero .herobg{object-position:50% 50%}}
+
+/* Ventana de contacto: compacta en pantallas bajas y sin scroll de fondo */
+html:has(.cw.on){overflow:hidden}
+@media(max-height:700px){
+ .cw .cw-box{padding:22px 20px 20px}
+ .cw .cw-box:before{height:38px;margin-bottom:8px}
+ .cw .cw-box h3{font-size:22px}
+ .cw .cw-box p{margin-bottom:14px;font-size:14px}
+ .cw .cw-list{gap:9px}
+ .cw .cw-opt{padding:11px 18px}
+}
+.agenda-load.over{position:absolute;inset:0;z-index:1;background:#fff;padding:0 20px}

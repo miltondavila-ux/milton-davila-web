@@ -25,6 +25,18 @@
     box.querySelector('.agenda-close').addEventListener('click', close);
   }
 
+  function quitarAviso() {
+    var l = body && body.querySelector('.agenda-load.over');
+    if (l) l.remove();
+  }
+
+  // TidyCal avisa su altura real cuando ya dibujó el calendario («[iFrameSizer]id:alto:ancho:tipo»)
+  window.addEventListener('message', function (e) {
+    if (e.origin !== 'https://tidycal.com' || typeof e.data !== 'string' || e.data.indexOf('[iFrameSizer]') !== 0) return;
+    var alto = parseInt(e.data.split(':')[1], 10);
+    if (alto > 600 && alto < 4000) quitarAviso();   // antes de dibujarse reporta una altura enorme y falsa
+  });
+
   function mount(path) {
     var div = document.createElement('div');
     div.className = 'tidycal-embed';
@@ -33,7 +45,11 @@
     function init() {
       if (!body.querySelector('iframe') && window.TidyCal) window.TidyCal.init(div);
       var l = body.querySelector('.agenda-load');
-      if (l && body.querySelector('iframe')) l.remove();
+      var fr = body.querySelector('iframe');
+      if (l && fr) {
+        l.classList.add('over');          // el aviso se queda encima hasta que el calendario se dibuje
+        setTimeout(quitarAviso, 20000);   // por si TidyCal tarda o no avisa
+      }
     }
     if (window.TidyCal) { scriptState = 2; init(); return; }
     if (scriptState === 0) {

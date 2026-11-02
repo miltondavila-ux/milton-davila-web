@@ -68,7 +68,7 @@ check('Tu negocio necesita una solución tecnológica que funcione' in src[:src.
 check(os.path.exists(os.path.join(ROOT, 'assets/og/og-home.jpg')), 'Falta la imagen OG')
 # Posicionamiento de implementación, URL sin www y correo enmascarado
 about_src0 = open(os.path.join(ROOT, "about-v3.html"), encoding="utf-8").read()
-check('<title>Quién es Milton Dávila | Ingeniero de implementación en Miami</title>' in about_src0, 'El título de Sobre mí debe hablar de implementación')
+check('<title>Quién es Milton Dávila | Sistemas e IA a la medida</title>' in about_src0, 'Título de Sobre mí distinto al aprobado')
 check('estratega' not in src.lower() and 'estratega' not in about_src0.lower(), 'Quedó la palabra «estratega» en las páginas')
 check('www.miltondavila.com' not in src and 'www.miltondavila.com' not in about_src0, 'Quedó una URL con www (la oficial es https://miltondavila.com)')
 check('href="mailto:info@miltondavila.net">info@miltondavila.com<' in src, 'El correo del pie debe verse .com y enviar a .net')
@@ -79,7 +79,8 @@ for nombre, fuente in (("la home", src), ("Sobre mí", about_hub)):
 # Menú móvil con QR (tarjeta de presentación)
 about_src = open(os.path.join(ROOT, "about-v3.html"), encoding="utf-8").read()
 check(os.path.exists(os.path.join(ROOT, 'assets/menu-v3.js')), 'Falta assets/menu-v3.js (menú móvil con QR)')
-check("Soy ingeniero de implementación (forward deployed engineer): trabajo dentro de tu empresa para construir, conectar y poner en marcha las herramientas que necesita." in about_src, 'Falta la presentación aprobada en Sobre mí')
+check("Diseño, construyo y despliego sistemas, integraciones e IA dentro de tu empresa, de la estrategia a la operación." in about_src, 'Falta la presentación aprobada en Sobre mí')
+check("ingeniero" not in (src+about_src).lower() and "forward deployed" not in (src+about_src).lower(), 'Quedó la palabra «ingeniero» o «forward deployed» en el sitio')
 check('assets/menu-v3.js' in src and 'assets/menu-v3.js' in about_src, 'Falta cargar menu-v3.js en la home o en Sobre mí')
 check("https://miltondavila.com/" in open(os.path.join(ROOT, 'assets/menu-v3.js'), encoding="utf-8").read(), 'El QR del menú no apunta a https://miltondavila.com/')
 check(os.path.exists(os.path.join(ROOT, 'assets/screenshots/home-movil.png')), 'Falta la captura móvil del manifest')
