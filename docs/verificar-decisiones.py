@@ -72,6 +72,10 @@ check('<title>Quién es Milton Dávila | Ingeniero de implementación en Miami</
 check('estratega' not in src.lower() and 'estratega' not in about_src0.lower(), 'Quedó la palabra «estratega» en las páginas')
 check('www.miltondavila.com' not in src and 'www.miltondavila.com' not in about_src0, 'Quedó una URL con www (la oficial es https://miltondavila.com)')
 check('href="mailto:info@miltondavila.net">info@miltondavila.com<' in src, 'El correo del pie debe verse .com y enviar a .net')
+# Sección «Conoce mi HUB» en las dos páginas
+about_hub = open(os.path.join(ROOT, "about-v3.html"), encoding="utf-8").read()
+for nombre, fuente in (("la home", src), ("Sobre mí", about_hub)):
+    check("Conoce <em>mi HUB.</em>" in fuente and 'href="https://hub.lasolucionweb.net"' in fuente, f"Falta la sección «Conoce mi HUB» en {nombre}")
 # Menú móvil con QR (tarjeta de presentación)
 about_src = open(os.path.join(ROOT, "about-v3.html"), encoding="utf-8").read()
 check(os.path.exists(os.path.join(ROOT, 'assets/menu-v3.js')), 'Falta assets/menu-v3.js (menú móvil con QR)')

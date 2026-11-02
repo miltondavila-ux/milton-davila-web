@@ -50,6 +50,12 @@ Verificador automático: `python3 docs/verificar-decisiones.py` (debe terminar e
 - Correo enmascarado: se MUESTRA info@miltondavila.com pero los enlaces mailto y el botón EMAIL del kit envían a info@miltondavila.net (el buzón real). Si alguien escribe el .com a mano rebota: crear un reenvío info@miltondavila.com → info@miltondavila.net en el hosting de correo.
 - Los clientes de Milton son pequeños negocios/profesionales: las pruebas (casos) deben ser de ese tamaño.
 
+- Home · portada en CELULAR (pedido de Milton): se comporta igual que la de Sobre mí: foto arriba en 4:5 centrada en él (QR visible), se funde en azul marino y el texto va en blanco debajo. En escritorio no cambia.
+
+- Celular (auditoría 2026-11-02, pendiente de publicar): botones todos de 50 px de alto, letra 700 más pequeña y con menos espaciado, sin partirse en 2 líneas; barra «¿Qué necesitas resolver?» con campo a todo el ancho y texto corto «¿Qué está pasando en tu negocio?» solo en celular (en escritorio sigue el texto largo); cifras en 2 columnas; etiquetas (kicker) más grandes y con barras más cortas. Revisado a 360, 390 px: sin desbordes, sin botones de menos de 44 px, todas las imágenes con alt.
+
+- Sección «Conoce mi HUB» (pedida por Milton 2026-11-02) en la home (antes de Sesiones privadas) y en Sobre mí (antes de Opiniones): título «Conoce mi HUB.», botón «Conocer mi HUB →» a https://hub.lasolucionweb.net, imagen `fotos/hub/hub-aplicaciones` (maqueta del panel «Mis aplicaciones» que Milton mandó, SIN fondo: recortada con transparencia a pedido suyo; sombra suave por CSS). El HUB reúne las aplicaciones de Milton: crear artículos, automatizar redes sociales, crear agentes de IA para atender clientes.
+
 ## Imágenes aprobadas
 - HERO: `assets/fotos/ia/hero-sonrisa-qr` (brazos cruzados, QR en la camiseta).
 - Sección 4: `assets/fotos/ia/reunion-qr` (sala de reuniones, QR en la camiseta).

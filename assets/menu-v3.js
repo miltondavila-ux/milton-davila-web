@@ -65,3 +65,15 @@
   });
   window.addEventListener('resize', function () { if (window.innerWidth > 900) set(false); });
 })();
+
+/* Celular: texto corto en la barra «¿Qué necesitas resolver?» para que no se corte */
+(function () {
+  var campo = document.querySelector('.askband form.ask input[name="q"]');
+  if (!campo) return;
+  var largo = campo.getAttribute('placeholder');
+  function ajustar() {
+    campo.setAttribute('placeholder', window.innerWidth <= 520 ? '¿Qué está pasando en tu negocio?' : largo);
+  }
+  ajustar();
+  window.addEventListener('resize', ajustar);
+})();

@@ -374,3 +374,60 @@ html.agenda-open{overflow:hidden}
  .hero.about-hero h1{font-size:clamp(2rem,9vw,2.6rem)}
  .hero.about-hero h1,.hero.about-hero .lead,.hero.about-hero .kick{text-shadow:none}
 }
+
+/* Home en celular: portada igual que «Sobre mí» (foto arriba que se funde en azul marino, texto blanco debajo) */
+@media(max-width:900px){
+ .hero.home-hero{background:#071a49}
+ .hero.home-hero .herobg{order:0;height:auto;aspect-ratio:4/5;object-position:90% 50%;-webkit-mask-image:linear-gradient(#000 82%,transparent);mask-image:linear-gradient(#000 82%,transparent)}
+ .hero.home-hero .sh{order:1;margin-top:-18px;padding-top:0;padding-bottom:34px;min-height:0}
+ .hero.home-hero h1,.hero.home-hero .lead,.hero.home-hero .kick{color:#fff}
+ .hero.home-hero h1{font-size:clamp(2rem,9vw,2.6rem)}
+ .hero.home-hero h1 em{color:#8fd6f7}
+ .hero.home-hero .slink{color:#8fd6f7}
+}
+
+/* Celular: barras de mensaje legibles y cifras en 2 columnas */
+@media(max-width:900px){
+ .ask input,.askband .ask input{font-size:.98rem;text-align:left}
+ .stats{grid-template-columns:1fr 1fr;gap:28px 14px}
+ .stats strong{font-size:1.4rem;white-space:nowrap}
+ .stats span{font-size:.84rem;line-height:1.35}
+}
+@media(max-width:900px){
+ .kick{font-size:.78rem}
+ .card .n{font-size:.84rem}
+ .cost{font-size:.85rem}
+ .top nav .btn.sm{font-size:.86rem}
+ .ft .bot,.ft .bot a{font-size:.86rem}
+}
+@media(max-width:900px){
+ form.ask{align-items:stretch}
+ form.ask input{width:100%;padding:12px 14px!important;font-size:.93rem}
+}
+@media(max-width:900px){
+ .askband form.ask input{font-size:.9rem}
+}
+@media(max-width:520px){
+ .kick{letter-spacing:.1em}
+ .kick:before{width:16px;height:4px;margin-right:18px;box-shadow:20px 0 0 #2a8a43}
+ .final .kick:before,.panel .kick:before,.rest .kick:before{box-shadow:20px 0 0 #69c8f0}
+}
+
+/* Celular: botones más finos y todos de la misma altura */
+@media(max-width:900px){
+ .btn:not(.sm),form.ask button{min-height:50px;padding-top:0;padding-bottom:0;padding-left:22px;padding-right:22px;font-size:.86rem;font-weight:700;letter-spacing:.04em;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;gap:8px;line-height:1}
+ form.ask button{width:100%}
+ .btn.sm{min-height:44px;font-size:.84rem;letter-spacing:.04em}
+}
+
+/* Sección «Conoce mi HUB» (home y Sobre mí) */
+.hubsec{border-top:1px solid var(--line)}
+.hubgrid{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:center}
+.hubtext .intro{color:var(--mute);font-size:1.08rem;line-height:1.7;margin:14px 0 20px}
+.hublist{list-style:none;padding:0;margin:0 0 28px;display:grid;gap:12px}
+.hublist li{position:relative;padding-left:26px;color:var(--ink);line-height:1.5}
+.hublist li:before{content:"";position:absolute;left:0;top:.5em;width:10px;height:10px;border-radius:50%;background:#ff6a13}
+.hubshot{margin:0}
+.hubshot img{display:block;width:100%;height:auto;filter:drop-shadow(0 22px 26px rgba(7,26,73,.28))}
+@media(max-width:900px){.hubgrid{grid-template-columns:1fr;gap:30px}}
+
