@@ -163,13 +163,13 @@ for k in ("name", "short_name", "description", "start_url", "scope", "display", 
     check(mf.get(k), f"manifest sin {k}")
 check(mf.get("name") == "Milton Dávila", "el nombre de la app debe ser Milton Dávila")
 for ic in mf["icons"]:
-    p = "assets/" + ic["src"] if not ic["src"].startswith("assets/") else ic["src"]
+    p = ("assets/" + ic["src"] if not ic["src"].startswith("assets/") else ic["src"]).split("?")[0]
     sz = img_size(p)
     check(os.path.exists(os.path.join(ROOT, p)), f"manifest: no existe {p}")
     if sz:
         check("%dx%d" % sz == ic["sizes"], f"manifest: {p} mide {sz}, declara {ic['sizes']}")
 for sc in mf.get("screenshots", []):
-    p = "assets/" + sc["src"]
+    p = ("assets/" + sc["src"]).split("?")[0]
     sz = img_size(p)
     check(os.path.exists(os.path.join(ROOT, p)), f"manifest: no existe {p}")
     if sz:
