@@ -92,6 +92,7 @@ for fname, canon, og in PAGES:
     check(len(P.ids) == len(set(P.ids)), f"[{n}] ids repetidos")
 
     check('<meta name="google-site-verification" content="0oY5QsV_KrcmhCDnGydMDdyDD-YTuLB7_HaIJm8OBhQ">' in s, f"[{n}] falta la etiqueta de verificación de Google Search Console")
+    check('<meta name="msvalidate.01" content="533679B07f70B69C407E124DB9011B4A">' in s, f"[{n}] falta la etiqueta de verificación de Bing")
     check("googletagmanager.com/gtag/js?id=G-GLQKNHSCNW" in s and "gtag('config', 'G-GLQKNHSCNW')" in s, f"[{n}] falta Google Analytics (G-GLQKNHSCNW)")
     # Open Graph y Twitter
     def meta(attr, name):

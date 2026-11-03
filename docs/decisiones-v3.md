@@ -74,7 +74,8 @@ Verificador automático: `python3 docs/verificar-decisiones.py` (debe terminar e
 ## Verificación y analítica (2026-11-02)
 - Google Search Console: `<meta name="google-site-verification" content="0oY5QsV_KrcmhCDnGydMDdyDD-YTuLB7_HaIJm8OBhQ">` en el `<head>` de las dos páginas (Google exige `<head>`, no `<body>`).
 - Google Analytics 4: etiqueta gtag `G-GLQKNHSCNW` en el `<head>` de las dos páginas.
-- Bing Webmaster: pendiente. Milton pegó dos veces la misma etiqueta de Google; Bing usa `<meta name="msvalidate.01" content="...">`.
+- Bing Webmaster: `<meta name="msvalidate.01" content="533679B07f70B69C407E124DB9011B4A">` en el `<head>` de las dos páginas.
+- Formato de las sesiones (confirmado por Milton): 10 min y 20 min son por LLAMADA TELEFÓNICA; solo la de 60 min es por ZOOM.
 
 ## TidyCal optimizado (2026-11-02, autorizado por Milton, hecho desde la vista lateral)
 - 10 min (`10-minutos-con-milton-davila`): «Sesión express de 10 minutos con Milton Dávila»; primer párrafo: «Una llamada corta para contarme qué está frenando tu negocio y ver cómo puedo ayudarte.»
