@@ -146,7 +146,7 @@
     var f = e.target.closest && e.target.closest(C.askSelector);
     if (!f) return;
     e.preventDefault();
-    open(null, f.querySelector('input').value.trim() || C.defaultMessage);
+    open(null, f.querySelector('input,textarea').value.trim() || C.defaultMessage);
   });
 
   window.addEventListener('resize', function () { if (box.classList.contains('on') && !box.querySelector('.cw-qr.one')) render(); });

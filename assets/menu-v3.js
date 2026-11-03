@@ -66,14 +66,56 @@
   window.addEventListener('resize', function () { if (window.innerWidth > 900) set(false); });
 })();
 
-/* Celular: texto corto en la barra «¿Qué necesitas resolver?» para que no se corte */
+/* Barra «¿Qué necesitas resolver?»: se entiende como una pregunta.
+   En celular: ejemplos que rotan en el texto de ayuda, ejemplos tocables, Enter envía y la caja crece al escribir. */
 (function () {
-  var campo = document.querySelector('.askband form.ask input[name="q"]');
+  var campo = document.querySelector('.askband form.ask textarea[name="q"]');
   if (!campo) return;
+  var form = campo.form;
   var largo = campo.getAttribute('placeholder');
-  function ajustar() {
-    campo.setAttribute('placeholder', window.innerWidth <= 520 ? '¿Qué está pasando en tu negocio?' : largo);
+  var ejemplos = [
+    'Ej.: Mis clientes no me encuentran en Google',
+    'Ej.: Pierdo clientes por responder tarde',
+    'Ej.: Mi equipo copia datos de un sistema a otro',
+    'Ej.: Quiero usar IA, pero no sé cómo',
+    'Ej.: Quiero construir algo propio para mi empresa'
+  ];
+  var i = 0, timer = null;
+  var movil = function () { return window.innerWidth <= 900; };
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function crecer() {
+    if (!movil()) { campo.style.height = ''; return; }
+    campo.style.height = 'auto';
+    campo.style.height = Math.min(Math.max(campo.scrollHeight, 112), 200) + 'px';
   }
-  ajustar();
+  function poner() {
+    campo.setAttribute('placeholder', movil() ? ejemplos[i % ejemplos.length] : largo);
+  }
+  function rotar() {
+    clearInterval(timer);
+    if (!movil() || reduce) return;
+    timer = setInterval(function () {
+      if (document.activeElement === campo || campo.value) return;
+      i++; poner();
+    }, 3500);
+  }
+  function ajustar() { poner(); crecer(); rotar(); }
+
+  campo.addEventListener('input', crecer);
+  campo.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' && !e.shiftKey && !e.isComposing) {
+      e.preventDefault();
+      if (form.requestSubmit) form.requestSubmit(); else form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+    }
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('.askband .ask-ej button[data-q]'), function (b) {
+    b.addEventListener('click', function () {
+      campo.value = b.getAttribute('data-q');
+      crecer();
+      campo.focus();
+    });
+  });
   window.addEventListener('resize', ajustar);
+  ajustar();
 })();

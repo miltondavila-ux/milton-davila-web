@@ -83,6 +83,10 @@ Verificador automático: `python3 docs/verificar-decisiones.py` (debe terminar e
 - 60 min (`consulta-1-hora-con-milton`): «Sesión de estrategia de 60 minutos con Milton Dávila»; «revisamos tu operación, definimos qué construir y sales con pasos concretos».
 - Los nombres de la página (URL) no se tocaron. Quedan sin tocar los otros 5 tipos de reserva.
 
+- Sección «¿Qué necesitas resolver?» (pedido de Milton 2026-11-02, pendiente de publicar): sin tarjeta intermedia ni borde doble; franja del mismo azul claro (--soft) que la sección siguiente, SIN línea divisoria con la sección siguiente (se funden en un solo bloque continuo); la barra blanca con borde y sombra suave es el único elemento destacado. En celular la barra gana ancho (332 px en vez de 260).
+
+- «¿Qué necesitas resolver?» en CELULAR (2026-11-02, estilo MINIMALISTA tomado de america.gov, pendiente de publicar): sin etiqueta superior, título limpio centrado, una sola caja blanca sin borde con sombra suave (textarea que crece), texto de ayuda que rota con ejemplos reales, botón circular azul marino con flecha blanca dibujada en SVG y centrada exactamente (no es un carácter de texto) y Enter envía. Sin botones de ejemplo (siguen en el HTML, ocultos) y sin botón naranja. En escritorio sigue la barra de una línea sin cambios. Encabezado compacto en pantallas ≤350 px para que el logo no quede tapado.
+
 ## Imágenes aprobadas
 - HERO: `assets/fotos/ia/hero-sonrisa-qr` (brazos cruzados, QR en la camiseta).
 - Sección 4: `assets/fotos/ia/reunion-qr` (sala de reuniones, QR en la camiseta).

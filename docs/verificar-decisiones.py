@@ -76,6 +76,9 @@ check('href="mailto:info@miltondavila.net">info@miltondavila.com<' in src, 'El c
 about_hub = open(os.path.join(ROOT, "about-v3.html"), encoding="utf-8").read()
 for nombre, fuente in (("la home", src), ("Sobre mí", about_hub)):
     check("Conoce <em>mi HUB.</em>" in fuente and 'href="https://hub.lasolucionweb.net"' in fuente, f"Falta la sección «Conoce mi HUB» en {nombre}")
+# Barra «¿Qué necesitas resolver?» como caja de pregunta (textarea + ejemplos)
+check('<textarea name="q"' in src and 'class="ask-ej"' in src, 'Falta la caja de pregunta con ejemplos en «¿Qué necesitas resolver?»')
+check("f.querySelector('input,textarea')" in open(os.path.join(ROOT, 'assets/contact-widget-v3.js'), encoding="utf-8").read(), 'El kit de contacto no lee el textarea')
 # Menú móvil con QR (tarjeta de presentación)
 about_src = open(os.path.join(ROOT, "about-v3.html"), encoding="utf-8").read()
 check(os.path.exists(os.path.join(ROOT, 'assets/menu-v3.js')), 'Falta assets/menu-v3.js (menú móvil con QR)')

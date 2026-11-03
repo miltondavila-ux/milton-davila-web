@@ -446,3 +446,51 @@ html:has(.cw.on){overflow:hidden}
  .cw .cw-opt{padding:11px 18px}
 }
 .agenda-load.over{position:absolute;inset:0;z-index:1;background:#fff;padding:0 20px}
+
+/* «¿Qué necesitas resolver?»: sin tarjeta intermedia, franja blanca y la barra como único elemento destacado */
+section.askband{background:var(--soft);padding:64px 0 24px;border:0}
+section.askband + .sec{border-top:0}
+.askband .ask-card{background:transparent;border:0;border-radius:0;padding:0}
+.askband .ask{box-shadow:0 16px 36px -20px rgba(7,26,73,.35)}
+@media(max-width:900px){section.askband{padding:44px 0 16px}.askband .ask-card{padding:0}}
+
+/* «¿Qué necesitas resolver?» como caja de pregunta (textarea) */
+.ask textarea{flex:1;min-width:0;border:0;outline:0;background:transparent;font:400 17px Inter,system-ui,sans-serif;color:var(--ask-input-text);padding:12px 0;resize:none;line-height:1.4;overflow:hidden;min-height:44px}
+.ask textarea::placeholder{color:var(--ask-placeholder)}
+.askband .ask textarea{font-family:Lato,Arial,sans-serif;font-size:1.05rem}
+.ask-ej{display:none}
+@media(max-width:900px){
+ .askband form.ask{display:block;position:relative;padding:0!important;border-radius:22px!important;background:#fff;border:1px solid var(--line)}
+ .askband form.ask textarea{display:block;width:100%;min-height:112px;height:112px;padding:16px 72px 16px 18px;font-size:1rem;line-height:1.5;overflow:auto;color:var(--ink)}
+ .askband form.ask textarea::placeholder{color:#6b7280;opacity:1}
+ .askband form.ask button{position:absolute;right:10px;bottom:10px;width:52px;height:52px;min-height:52px;padding:0!important;border-radius:50%;font-size:0!important;letter-spacing:0;display:grid;place-items:center;gap:0}
+ .askband form.ask button::after{content:"→";font-size:1.6rem;line-height:1;font-weight:700;color:#0b0d0c}
+ .ask-ej{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:16px}
+ .ask-ej span{flex:0 0 100%;text-align:center;font-size:.82rem;color:var(--mute)}
+ .ask-ej button{min-height:44px;padding:0 16px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--navy);font:700 .86rem Lato,Arial,sans-serif;cursor:pointer}
+ .ask-ej button:active{background:var(--soft)}
+}
+
+
+/* «¿Qué necesitas resolver?» en celular: estilo minimalista (idea de america.gov): título limpio, una caja blanca con sombra suave y un botón sobrio */
+@media(max-width:900px){
+ section.askband{padding:56px 0 28px}
+ .askband .kick{display:none}
+ .askband h2{font-size:2.05rem;line-height:1.12;margin-bottom:26px;text-align:center}
+ .askband form.ask{border:0;border-radius:28px!important;box-shadow:0 18px 46px -18px rgba(7,26,73,.28)}
+ .askband form.ask:focus-within{box-shadow:0 0 0 2px rgba(0,105,201,.28),0 18px 46px -18px rgba(7,26,73,.28)}
+ .askband form.ask textarea{min-height:124px;height:124px;padding:20px 76px 20px 22px;font-size:1.05rem;line-height:1.5}
+ .askband form.ask textarea::placeholder{color:#8a93a3}
+ .askband form.ask button{width:48px;height:48px;min-height:48px;right:14px;bottom:14px;background:#071a49;box-shadow:none}
+ .askband form.ask button:hover,.askband form.ask button:active{background:#0b2a6b}
+ .askband form.ask button::after{color:#fff;font-size:1.45rem;font-weight:400}
+ .askband .ask-ej{display:none}
+ .askband .hint{display:block;max-width:30ch;margin:20px auto 0;text-align:center;font-size:.8rem;line-height:1.5;color:#8a93a3}
+}
+@media(max-width:350px){.top img{width:116px}.top nav .btn.sm{padding-left:12px;padding-right:12px;font-size:.78rem;min-width:0}.menu-btn{margin-left:6px;width:40px}.top .sh{padding:0 14px}}
+
+/* Flecha del botón circular: dibujada (no es texto) y centrada exactamente */
+@media(max-width:900px){
+ .askband form.ask button{display:flex;align-items:center;justify-content:center;padding:0!important;line-height:0}
+ .askband form.ask button::after{content:"";display:block;flex:none;width:22px;height:22px;margin:0;font-size:0;line-height:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center/contain no-repeat}
+}
