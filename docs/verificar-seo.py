@@ -180,6 +180,10 @@ for p, esperado in (("assets/icons/apple-touch-icon.png", (180, 180)), ("assets/
     if sz:
         check(sz == esperado, f"{p} mide {sz}, debe medir {esperado}")
 check(os.path.exists(os.path.join(ROOT, "assets/icons/favicon.ico")), "falta favicon.ico")
+for n in ("milton-v3.html", "about-v3.html"):
+    check('rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png?v=2"' in rd(n), f"[{n}] el ícono de iPhone debe llevar ?v=2 para que Safari lo descargue de nuevo")
+src_build = rd("publicar/armar-sitio.py")
+check("apple-touch-icon-precomposed.png" in src_build and '"apple-touch-icon.png")' in src_build, "el armado debe copiar apple-touch-icon.png a la raíz")
 
 print(f"Correctos: {ok} | Fallos: {len(fails)} | Avisos: {len(warns)}")
 for f in fails:

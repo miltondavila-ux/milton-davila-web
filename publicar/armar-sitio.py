@@ -28,7 +28,9 @@ convertir("milton-v3.html", D + "/index.html")
 convertir("about-v3.html", D + "/about.html")
 for origen, destino in [("publicar/robots.txt", "robots.txt"), ("publicar/sitemap.xml", "sitemap.xml"),
                         ("publicar/llms.txt", "llms.txt"), ("publicar/404.html", "404.html"),
-                        ("assets/icons/favicon.ico", "favicon.ico")]:
+                        ("assets/icons/favicon.ico", "favicon.ico"),
+                        ("assets/icons/apple-touch-icon.png", "apple-touch-icon.png"),
+                        ("assets/icons/apple-touch-icon.png", "apple-touch-icon-precomposed.png")]:
     shutil.copy(origen, D + "/" + destino)
 
 manifest = open("assets/manifest-v3.webmanifest", encoding="utf-8").read()

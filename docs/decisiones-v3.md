@@ -87,6 +87,8 @@ Verificador automático: `python3 docs/verificar-decisiones.py` (debe terminar e
 
 - «¿Qué necesitas resolver?» en CELULAR (2026-11-02, estilo MINIMALISTA tomado de america.gov, pendiente de publicar): sin etiqueta superior, título limpio centrado, una sola caja blanca sin borde con sombra suave (textarea que crece), texto de ayuda que rota con ejemplos reales, botón circular azul marino con flecha blanca dibujada en SVG y centrada exactamente (no es un carácter de texto) y Enter envía. Sin botones de ejemplo (siguen en el HTML, ocultos) y sin botón naranja. En escritorio sigue la barra de una línea sin cambios. Encabezado compacto en pantallas ≤350 px para que el logo no quede tapado.
 
+- Ícono de iPhone (2026-11-02): Safari no lo mostraba al «Añadir a pantalla de inicio»; se agregó `apple-touch-icon.png` y `apple-touch-icon-precomposed.png` en la RAÍZ del sitio y el enlace lleva `?v=2` para forzar la descarga nueva. Si se cambia el ícono otra vez, subir el número (`?v=3`).
+
 ## Imágenes aprobadas
 - HERO: `assets/fotos/ia/hero-sonrisa-qr` (brazos cruzados, QR en la camiseta).
 - Sección 4: `assets/fotos/ia/reunion-qr` (sala de reuniones, QR en la camiseta).
