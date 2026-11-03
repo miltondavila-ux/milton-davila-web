@@ -494,3 +494,20 @@ section.askband + .sec{border-top:0}
  .askband form.ask button{display:flex;align-items:center;justify-content:center;padding:0!important;line-height:0}
  .askband form.ask button::after{content:"";display:block;flex:none;width:22px;height:22px;margin:0;font-size:0;line-height:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center/contain no-repeat}
 }
+
+/* Botón de QR en el encabezado (solo escritorio) y ventana «¡Pásalo a móvil!» */
+.qr-btn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;margin-left:-10px;padding:0;border:1px solid var(--line);border-radius:12px;background:var(--soft);color:var(--navy);cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.qr-btn:hover{background:#fff;border-color:var(--blue);color:var(--blue)}
+.qr-btn:focus-visible{outline:3px solid #ff6a13;outline-offset:2px}
+.qr-modal{position:fixed;inset:0;z-index:2100;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(7,26,73,.62)}
+.qr-modal[hidden]{display:none}
+.qr-card{position:relative;width:min(380px,100%);padding:38px 34px 30px;border-radius:24px;border-top:4px solid #0076df;background:#fff;text-align:center;box-shadow:0 30px 80px -20px rgba(0,0,0,.5)}
+.qr-card h3{margin:0 0 20px;color:var(--navy);font-size:1.7rem;font-weight:300;letter-spacing:-.02em}
+.qr-code{width:236px;height:236px;margin:0 auto;padding:14px;border:1px solid var(--line);border-radius:18px;background:#fff;line-height:0}
+.qr-code svg{width:100%;height:100%}
+.qr-card p{margin:20px auto 0;max-width:28ch;color:var(--mute);font-size:.95rem;line-height:1.5}
+.qr-x{position:absolute;top:10px;right:12px;width:44px;height:44px;border:0;border-radius:50%;background:var(--soft);color:var(--navy);font-size:1.7rem;line-height:1;cursor:pointer}
+.qr-x:hover{background:var(--line)}
+html.qr-open{overflow:hidden}
+@media(max-width:900px){.qr-btn{display:none}}
+

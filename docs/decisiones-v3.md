@@ -89,6 +89,8 @@ Verificador automático: `python3 docs/verificar-decisiones.py` (debe terminar e
 
 - Ícono de iPhone (2026-11-02): Safari no lo mostraba al «Añadir a pantalla de inicio»; se agregó `apple-touch-icon.png` y `apple-touch-icon-precomposed.png` en la RAÍZ del sitio y el enlace lleva `?v=2` para forzar la descarga nueva. Si se cambia el ícono otra vez, subir el número (`?v=3`). Android: el manifest y sus íconos también llevan `?v=2` y las páginas declaran `mobile-web-app-capable`; así Chrome descarga el manifest e íconos nuevos.
 
+- Botón de QR en el encabezado de ESCRITORIO, junto a «Hablemos» (pedido de Milton 2026-11-02): abre una ventana flotante «¡Pásalo a móvil!» con el QR de la página que se está viendo. En celular no aparece (ya existe el menú con QR).
+
 ## Imágenes aprobadas
 - HERO: `assets/fotos/ia/hero-sonrisa-qr` (brazos cruzados, QR en la camiseta).
 - Sección 4: `assets/fotos/ia/reunion-qr` (sala de reuniones, QR en la camiseta).

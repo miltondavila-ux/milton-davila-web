@@ -119,3 +119,70 @@
   window.addEventListener('resize', ajustar);
   ajustar();
 })();
+
+/* Escritorio: botón de código QR junto a «Hablemos» → ventana «¡Pásalo a móvil!» con el QR de la página que estás viendo */
+(function () {
+  var nav = document.querySelector('.top nav');
+  if (!nav) return;
+  var QR_ICON = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="6.5" height="6.5" rx="1.2"/><rect x="14" y="3.5" width="6.5" height="6.5" rx="1.2"/><rect x="3.5" y="14" width="6.5" height="6.5" rx="1.2"/><path d="M14 14h2.5v2.5H14zM18 14h2.5M14 19v1.5M17.5 17.5H20.5V20.5M17.5 20.5v0"/></svg>';
+  var btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'qr-btn';
+  btn.setAttribute('aria-label', 'Pásalo a tu móvil con un código QR');
+  btn.setAttribute('aria-haspopup', 'dialog');
+  btn.title = 'Pásalo a móvil';
+  btn.innerHTML = QR_ICON;
+  nav.appendChild(btn);
+
+  var box = null, last = null;
+
+  function paginaActual() {
+    var c = document.querySelector('link[rel="canonical"]');
+    return (c && c.href) || (location.origin + location.pathname);
+  }
+
+  function construir() {
+    box = document.createElement('div');
+    box.className = 'qr-modal';
+    box.setAttribute('role', 'dialog');
+    box.setAttribute('aria-modal', 'true');
+    box.setAttribute('aria-labelledby', 'qr-titulo');
+    box.hidden = true;
+    var url = paginaActual();
+    var svg = '';
+    if (window.qrcode) {
+      var q = window.qrcode(0, 'M');
+      q.addData(url);
+      q.make();
+      svg = q.createSvgTag({ cellSize: 6, margin: 0, scalable: true });
+    }
+    box.innerHTML =
+      '<div class="qr-card">' +
+      '<button type="button" class="qr-x" aria-label="Cerrar">&times;</button>' +
+      '<h3 id="qr-titulo">¡Pásalo a móvil!</h3>' +
+      '<div class="qr-code" role="img" aria-label="Código QR que abre esta página en tu celular">' + svg + '</div>' +
+      '<p>Abre la cámara de tu celular y apunta al código. Se abre esta misma página.</p>' +
+      '</div>';
+    document.body.appendChild(box);
+    box.addEventListener('click', function (e) { if (e.target === box) cerrar(); });
+    box.querySelector('.qr-x').addEventListener('click', cerrar);
+  }
+
+  function abrir() {
+    if (!box) construir();
+    last = document.activeElement;
+    box.hidden = false;
+    document.documentElement.classList.add('qr-open');
+    box.querySelector('.qr-x').focus();
+  }
+  function cerrar() {
+    if (!box || box.hidden) return;
+    box.hidden = true;
+    document.documentElement.classList.remove('qr-open');
+    if (last && last.focus) last.focus();
+  }
+
+  btn.addEventListener('click', abrir);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') cerrar(); });
+})();
+
