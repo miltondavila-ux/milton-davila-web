@@ -174,14 +174,14 @@ for sc in mf.get("screenshots", []):
     check(os.path.exists(os.path.join(ROOT, p)), f"manifest: no existe {p}")
     if sz:
         check("%dx%d" % sz == sc["sizes"], f"manifest: {p} mide {sz}, declara {sc['sizes']}")
-for p, esperado in (("assets/icons/apple-touch-icon.png", (180, 180)), ("assets/icons/favicon-32.png", (32, 32)), ("assets/icons/favicon-16.png", (16, 16))):
+for p, esperado in (("assets/icons/apple-touch-icon.png", (180, 180)), ("assets/icons/m-azul-180.png", (180, 180)), ("assets/icons/favicon-32.png", (32, 32)), ("assets/icons/favicon-16.png", (16, 16))):
     sz = img_size(p)
     check(os.path.exists(os.path.join(ROOT, p)), f"no existe {p}")
     if sz:
         check(sz == esperado, f"{p} mide {sz}, debe medir {esperado}")
 check(os.path.exists(os.path.join(ROOT, "assets/icons/favicon.ico")), "falta favicon.ico")
 for n in ("milton-v3.html", "about-v3.html"):
-    check('rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png?v=2"' in rd(n), f"[{n}] el ícono de iPhone debe llevar ?v=2 para que Safari lo descargue de nuevo")
+    check('rel="apple-touch-icon" sizes="180x180" href="assets/icons/m-azul-180.png"' in rd(n), f"[{n}] el ícono de iPhone debe apuntar al archivo nuevo m-azul-180.png (nombre nuevo para que Safari lo descargue de nuevo)")
 src_build = rd("publicar/armar-sitio.py")
 check("apple-touch-icon-precomposed.png" in src_build and '"apple-touch-icon.png")' in src_build, "el armado debe copiar apple-touch-icon.png a la raíz")
 
