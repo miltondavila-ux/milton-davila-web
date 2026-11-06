@@ -3,6 +3,7 @@
    Requiere qrcode.min.js (cargado antes) y las reglas .menu-* de milton-v3.css. */
 (function () {
   var QR_URL = 'https://miltondavila.com/';
+  var tr = function (s) { return window.MDI18n ? window.MDI18n.t(s) : s; };   // traductor ES/EN (assets/i18n.js)
   var nav = document.querySelector('.top nav');
   var bar = document.querySelector('.top .sh');
   if (!nav || !bar) return;
@@ -53,7 +54,7 @@
   function set(open) {
     panel.hidden = !open;
     btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    btn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    btn.setAttribute('aria-label', tr(open ? 'Cerrar menú' : 'Abrir menú'));
     document.documentElement.classList.toggle('menu-open', open);
   }
 
@@ -73,6 +74,7 @@
   if (!campo) return;
   var form = campo.form;
   var largo = campo.getAttribute('placeholder');
+  var tr = function (s) { return window.MDI18n ? window.MDI18n.t(s) : s; };   // traductor ES/EN (assets/i18n.js)
   var ejemplos = [
     'Ej.: Mis clientes no me encuentran en Google',
     'Ej.: Pierdo clientes por responder tarde',
@@ -90,7 +92,7 @@
     campo.style.height = Math.min(Math.max(campo.scrollHeight, 112), 200) + 'px';
   }
   function poner() {
-    campo.setAttribute('placeholder', movil() ? ejemplos[i % ejemplos.length] : largo);
+    campo.setAttribute('placeholder', tr(movil() ? ejemplos[i % ejemplos.length] : largo));
   }
   function rotar() {
     clearInterval(timer);
@@ -124,6 +126,8 @@
 (function () {
   var nav = document.querySelector('.top nav');
   if (!nav) return;
+  var tr = function (s) { return window.MDI18n ? window.MDI18n.t(s) : s; };   // traductor ES/EN (assets/i18n.js)
+  var scan = function (el) { if (window.MDI18n) window.MDI18n.scan(el); };
   var QR_ICON = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="6.5" height="6.5" rx="1.2"/><rect x="14" y="3.5" width="6.5" height="6.5" rx="1.2"/><rect x="3.5" y="14" width="6.5" height="6.5" rx="1.2"/><path d="M14 14h2.5v2.5H14zM18 14h2.5M14 19v1.5M17.5 17.5H20.5V20.5M17.5 20.5v0"/></svg>';
   var btn = document.createElement('button');
   btn.type = 'button';
@@ -164,6 +168,7 @@
       '<p>Abre la cámara de tu celular y apunta al código. Se abre esta misma página.</p>' +
       '</div>';
     document.body.appendChild(box);
+    scan(box);
     box.addEventListener('click', function (e) { if (e.target === box) cerrar(); });
     box.querySelector('.qr-x').addEventListener('click', cerrar);
   }

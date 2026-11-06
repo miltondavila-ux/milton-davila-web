@@ -5,6 +5,7 @@
 (function () {
   var EMBED_JS = 'https://asset-tidycal.b-cdn.net/js/embed.js';
   var box, body, lastFocus, scriptState = 0; // 0 sin cargar, 1 cargando, 2 listo
+  var tr = function (s) { return window.MDI18n ? window.MDI18n.t(s) : s; };   // traductor ES/EN (assets/i18n.js)
 
   function build() {
     box = document.createElement('div');
@@ -20,6 +21,7 @@
       '<a class="agenda-out" target="_blank" rel="noopener noreferrer">Abrir en una pestaña nueva</a>' +
       '</div>';
     document.body.appendChild(box);
+    if (window.MDI18n) window.MDI18n.scan(box);
     body = box.querySelector('.agenda-body');
     box.addEventListener('click', function (e) { if (e.target === box) close(); });
     box.querySelector('.agenda-close').addEventListener('click', close);
@@ -58,7 +60,7 @@
       s.src = EMBED_JS;
       s.async = true;
       s.onload = function () { scriptState = 2; setTimeout(init, 0); };
-      s.onerror = function () { scriptState = 0; body.innerHTML = '<div class="agenda-load">No se pudo cargar el calendario. Usa el enlace de abajo.</div>'; };
+      s.onerror = function () { scriptState = 0; body.innerHTML = '<div class="agenda-load">' + tr('No se pudo cargar el calendario. Usa el enlace de abajo.') + '</div>'; };
       document.head.appendChild(s);
     }
   }
@@ -67,7 +69,7 @@
     if (!box) build();
     lastFocus = document.activeElement;
     var u = new URL(url);
-    body.innerHTML = '<div class="agenda-load">Cargando calendario…</div>';
+    body.innerHTML = '<div class="agenda-load">' + tr('Cargando calendario…') + '</div>';
     box.querySelector('.agenda-out').href = url;
     box.hidden = false;
     document.documentElement.classList.add('agenda-open');
