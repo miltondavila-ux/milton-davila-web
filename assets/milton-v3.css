@@ -365,7 +365,7 @@ html.agenda-open{overflow:hidden}
 .hero.about-hero h1 em{color:#8fd6f7}
 .hero.about-hero .lead{font-size:1.05rem;line-height:1.65}
 .hero.about-hero .crumbs,.hero.about-hero .crumbs span,.hero.about-hero .crumbs a{color:rgba(255,255,255,.9);text-shadow:0 1px 8px rgba(7,26,73,.55)}
-@media(min-width:901px){.hero.about-hero{aspect-ratio:2000/1116;max-height:800px}}
+@media(min-width:901px){.hero.about-hero{aspect-ratio:2000/1116;max-height:800px;width:100%}}
 @media(max-width:900px){
  .hero.about-hero::before{display:none}
  .hero.about-hero .herobg{order:0;height:auto;aspect-ratio:4/5;object-position:84% 50%;-webkit-mask-image:linear-gradient(#000 82%,transparent);mask-image:linear-gradient(#000 82%,transparent)}
@@ -511,3 +511,17 @@ section.askband + .sec{border-top:0}
 html.qr-open{overflow:hidden}
 @media(max-width:900px){.qr-btn{display:none}}
 
+/* Redes sociales en el footer */
+.ft .sh>.soc-row{flex:1 0 100%;display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.ft .sh>.soc-row .soc{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;margin:0;padding:0;min-height:44px;border:1px solid var(--line);border-radius:50%;background:#fff;color:var(--navy);transition:background .2s,color .2s,border-color .2s}
+.ft .sh>.soc-row a.soc:hover{background:var(--navy);border-color:var(--navy);color:#fff}
+.ft .sh>.soc-row a.soc:focus-visible{outline:3px solid #ff6a13;outline-offset:2px}
+
+/* Traductor ES/EN */
+.langbtn{display:inline-flex;align-items:center;gap:7px;min-height:44px;background:transparent;border:1px solid var(--line);border-radius:999px;padding:7px 12px;color:var(--navy);font:700 12px Lato,Arial,sans-serif;letter-spacing:.1em;cursor:pointer;transition:border-color .2s,color .2s}
+.langbtn:hover{border-color:var(--blue);color:var(--blue)}
+.langbtn:focus-visible{outline:3px solid #ff6a13;outline-offset:2px}
+.langbtn svg{border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+html.i18n-pending body{visibility:hidden}
+.top nav .btn.sm{white-space:nowrap}
+@media(max-width:520px){.langbtn .lt{display:none}.langbtn{padding:8px;min-width:40px;justify-content:center}.top nav{gap:8px}}

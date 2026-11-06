@@ -51,10 +51,10 @@ for f in ("index.html", "about.html"):
 # Copiar solo lo que se usa
 refs = set()
 fuentes = [D + "/index.html", D + "/about.html", D + "/manifest.webmanifest", D + "/assets/site.min.css",
-           D + "/assets/contact-widget.min.js", "assets/agenda-modal.js", "assets/menu-v3.js"]
+           D + "/assets/contact-widget.min.js", "assets/agenda-modal.js", "assets/menu-v3.js", "assets/i18n.js"]
 for p in fuentes:
     t = open(p, encoding="utf-8").read()
-    refs |= set(re.findall(r"assets/[A-Za-z0-9_\-./]+\.(?:webp|png|jpg|jpeg|svg|ico|woff2|js|css|webmanifest)", t))
+    refs |= set(re.findall(r"assets/[A-Za-z0-9_\-./]+\.(?:webp|png|jpg|jpeg|svg|ico|woff2|json|js|css|webmanifest)", t))
 for css in ("assets/milton-v3.css", "assets/contact-widget.css", "assets/ask-section.css"):
     t = open(css, encoding="utf-8").read()
     for u in re.findall(r'url\(["\']?([^)"\']+)', t):

@@ -27,11 +27,13 @@
   };
 
   var C = CONFIG;
+  var tr = function (s) { return window.MDI18n ? window.MDI18n.t(s) : s; };   // traductor ES/EN (assets/i18n.js)
+  var scan = function (el) { if (window.MDI18n) window.MDI18n.scan(el); };
   var mkLinks = function (msg) { return {
     call: 'tel:+' + C.callPhone,
     sms: 'sms:+' + C.textPhone + '?&body=' + encodeURIComponent(msg),
     wa: 'https://wa.me/' + C.textPhone + '?text=' + encodeURIComponent(msg),
-    mail: 'mailto:' + C.email + '?subject=' + encodeURIComponent(C.emailSubject) + '&body=' + encodeURIComponent(msg)
+    mail: 'mailto:' + C.email + '?subject=' + encodeURIComponent(tr(C.emailSubject)) + '&body=' + encodeURIComponent(msg)
   }; };
   var links = mkLinks(C.defaultMessage), custom = null;
   var icons = {
@@ -65,7 +67,7 @@
   }
 
   function qrCard(key, link, label) {
-    return '<div class="cw-q"><div class="code">' + qr(link) + '</div><b>' + icons[key] + names[key] + '</b><small>' + label + '</small></div>';
+    return '<div class="cw-q"><div class="code">' + qr(link) + '</div><b>' + icons[key] + tr(names[key]) + '</b><small>' + label + '</small></div>';
   }
 
   /* 3. HTML de la ventana principal («YOUR MESSAGE IS READY» / «CONTACT US») */
@@ -73,11 +75,11 @@
     var keys = ['call', 'sms', 'wa', 'mail'];
     var L = custom ? mkLinks(custom) : links, h;
     var head = custom
-      ? '<h3>' + C.readyTitle + '</h3><div class="cw-msg">' + esc(custom) + '</div><p>'
+      ? '<h3>' + C.readyTitle + '</h3><div class="cw-msg" data-no-i18n>' + esc(custom) + '</div><p>'
       : '<h3>' + C.title + '</h3><p>';
     if (isMobile()) {
       h = head + (custom ? C.mobileIntroReady : C.mobileIntro) + '</p><div class="cw-list">' + keys.map(function (k) {
-        return '<a class="cw-opt" href="' + L[k] + '"' + (k === 'wa' ? ' target="_blank" rel="noopener"' : '') + '>' + icons[k] + '<span>' + names[k] + '<small>' + sub[k] + '</small></span></a>';
+        return '<a class="cw-opt" href="' + L[k] + '"' + (k === 'wa' ? ' target="_blank" rel="noopener"' : '') + '>' + icons[k] + '<span>' + tr(names[k]) + '<small>' + sub[k] + '</small></span></a>';
       }).join('') + '</div>';
     } else {
       h = head + (custom ? C.qrIntroReady : C.qrIntro) + '</p><div class="cw-qr' + (custom ? ' three' : '') + '">' + keys.map(function (k) {
@@ -87,16 +89,18 @@
       else if (C.contactPageUrl) h += '<p class="cw-hint">Or <a href="' + C.contactPageUrl + '">send us a message here</a>.</p>';
     }
     box.innerHTML = '<div class="cw-box"><button class="cw-x" aria-label="Close">&times;</button>' + h + '</div>';
+    scan(box);
   }
 
   var thanks = false;
   function open(e, msg, goThanks) {
     if (e && e.preventDefault) e.preventDefault();
-    custom = msg || null; thanks = !!goThanks; render(); box.classList.add('on');
+    custom = msg || null; thanks = !!goThanks; links = mkLinks(tr(C.defaultMessage)); render(); box.classList.add('on');
   }
   function close() { box.classList.remove('on'); }
   function showSingle(title, intro, key, link, label) {
     box.innerHTML = '<div class="cw-box"><button class="cw-x" aria-label="Close">&times;</button><h3>' + title + '</h3><p>' + intro + '</p><div class="cw-qr one">' + qrCard(key, link, label) + '</div></div>';
+    scan(box);
     custom = null; thanks = false; box.classList.add('on');
   }
 
@@ -146,7 +150,7 @@
     var f = e.target.closest && e.target.closest(C.askSelector);
     if (!f) return;
     e.preventDefault();
-    open(null, f.querySelector('input,textarea').value.trim() || C.defaultMessage);
+    open(null, f.querySelector('input,textarea').value.trim() || tr(C.defaultMessage));
   });
 
   window.addEventListener('resize', function () { if (box.classList.contains('on') && !box.querySelector('.cw-qr.one')) render(); });
