@@ -47,7 +47,7 @@ Verificador automático: `python3 docs/verificar-decisiones.py` (debe terminar e
 ## Decisiones del 2026-11-02 (tarde, pendientes de publicar)
 - Posicionamiento: ya no se usa «estratega». Título de Sobre mí: «Quién es Milton Dávila | Ingeniero de implementación en Miami». FAQ «¿Qué hace Milton Dávila?», schema (jobTitle/description) y llms.txt hablan de ingeniero de implementación.
 - URL oficial SIN www: https://miltondavila.com (www redirige). Canonical, OG, schema, sitemap, robots y llms.txt actualizados.
-- Correo enmascarado: se MUESTRA info@miltondavila.com pero los enlaces mailto y el botón EMAIL del kit envían a info@miltondavila.net (el buzón real). Si alguien escribe el .com a mano rebota: crear un reenvío info@miltondavila.com → info@miltondavila.net en el hosting de correo.
+- Correo enmascarado: se MUESTRA info@miltondavila.com pero los enlaces mailto y el botón EMAIL del kit envían a miltondavila@gmail.com (decisión del dueño, 2026-11-16; antes iban a info@miltondavila.net). Si alguien escribe el .com a mano puede rebotar: crear un reenvío en el hosting de correo si se quiere cubrir ese caso.
 - Los clientes de Milton son pequeños negocios/profesionales: las pruebas (casos) deben ser de ese tamaño.
 
 - Home · portada en CELULAR (pedido de Milton): se comporta igual que la de Sobre mí: foto arriba en 4:5 centrada en él (QR visible), se funde en azul marino y el texto va en blanco debajo. En escritorio no cambia.

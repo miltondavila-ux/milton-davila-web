@@ -71,7 +71,7 @@ about_src0 = open(os.path.join(ROOT, "about-v3.html"), encoding="utf-8").read()
 check('<title>Quién es Milton Dávila | Sistemas e IA a la medida</title>' in about_src0, 'Título de Sobre mí distinto al aprobado')
 check('estratega' not in src.lower() and 'estratega' not in about_src0.lower(), 'Quedó la palabra «estratega» en las páginas')
 check('www.miltondavila.com' not in src and 'www.miltondavila.com' not in about_src0, 'Quedó una URL con www (la oficial es https://miltondavila.com)')
-check('href="mailto:info@miltondavila.net">info@miltondavila.com<' in src, 'El correo del pie debe verse .com y enviar a .net')
+check('href="mailto:miltondavila@gmail.com">info@miltondavila.com<' in src, 'El correo del pie debe verse .com y enviar a la bandeja de Gmail del dueño')
 # Sección «Conoce mi HUB» en las dos páginas
 about_hub = open(os.path.join(ROOT, "about-v3.html"), encoding="utf-8").read()
 for nombre, fuente in (("la home", src), ("Sobre mí", about_hub)):
