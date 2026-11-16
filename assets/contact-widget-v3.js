@@ -7,7 +7,7 @@
     callLabel: '+1 (305) 206-2675',
     textPhone: '13052062675',
     textLabel: '+1 (305) 206-2675',
-    email: 'info@miltondavila.net',          // dirección real: aquí llegan los correos
+    email: 'miltondavila@gmail.com',          // dirección real: aquí llegan los correos
     emailLabel: 'info@miltondavila.com',     // lo que se muestra al visitante
     defaultMessage: 'Hola Milton, quiero conversar sobre un problema de mi negocio',
     emailSubject: 'Consulta para Milton Dávila',
