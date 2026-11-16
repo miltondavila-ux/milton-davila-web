@@ -102,7 +102,7 @@
   }
   function close() { box.classList.remove('on'); }
   function showSingle(title, intro, key, link, label) {
-    box.innerHTML = '<div class="cw-box"><button class="cw-x" aria-label="Close">&times;</button><h3>' + title + '</h3><p>' + intro + '</p><div class="cw-qr one">' + qrCard(key, link, label) + '</div></div>';
+    box.innerHTML = '<div class="cw-box"><button class="cw-x" aria-label="Close">&times;</button><h3>' + title + '</h3><p>' + intro + '</p><div class="cw-qr one">' + qrCard(key, link, label) + qrCard('agenda', C.agendaUrl, sub.agenda) + '</div></div>';
     scan(box);
     custom = null; thanks = false; box.classList.add('on');
   }
