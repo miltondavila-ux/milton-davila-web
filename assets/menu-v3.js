@@ -153,13 +153,7 @@
     box.setAttribute('aria-labelledby', 'qr-titulo');
     box.hidden = true;
     var url = paginaActual();
-    var svg = '', svgAg = '';
-    if (window.qrcode) {   // segundo QR: lleva a la sección «Sesiones» del home
-      var qa = window.qrcode(0, 'M');
-      qa.addData('https://miltondavila.com/#sesiones');
-      qa.make();
-      svgAg = qa.createSvgTag({ cellSize: 4, margin: 0, scalable: true });
-    }
+    var svg = '';
     if (window.qrcode) {
       var q = window.qrcode(0, 'M');
       q.addData(url);
@@ -170,13 +164,8 @@
       '<div class="qr-card">' +
       '<button type="button" class="qr-x" aria-label="Cerrar">&times;</button>' +
       '<h3 id="qr-titulo">¡Pásalo a móvil!</h3>' +
-      '<p class="qr-intro">Abre la cámara de tu celular y apunta a un código.</p>' +
-      '<div class="qr-pair">' +
-      '<div class="qr-col"><div class="qr-code" role="img" aria-label="Código QR que abre esta página en tu celular">' + svg + '</div>' +
-      '<p class="qr-ag-t"><b>ESTA PÁGINA</b><span>Ábrela en tu celular</span></p></div>' +
-      '<div class="qr-col"><div class="qr-code" role="img" aria-label="Código QR que abre la sección de sesiones">' + svgAg + '</div>' +
-      '<p class="qr-ag-t"><b>AGENDAR</b><span>Reserva una sesión</span></p></div>' +
-      '</div>' +
+      '<div class="qr-code" role="img" aria-label="Código QR que abre esta página en tu celular">' + svg + '</div>' +
+      '<p>Abre la cámara de tu celular y apunta al código. Se abre esta misma página.</p>' +
       '</div>';
     document.body.appendChild(box);
     scan(box);
