@@ -170,9 +170,13 @@
       '<div class="qr-card">' +
       '<button type="button" class="qr-x" aria-label="Cerrar">&times;</button>' +
       '<h3 id="qr-titulo">¡Pásalo a móvil!</h3>' +
-      '<div class="qr-code" role="img" aria-label="Código QR que abre esta página en tu celular">' + svg + '</div>' +
-      '<p>Abre la cámara de tu celular y apunta al código. Se abre esta misma página.</p>' +
-      '<div class="qr-ag"><div class="qr-ag-code" role="img" aria-label="Código QR que abre la sección de sesiones">' + svgAg + '</div><div class="qr-ag-t"><b>AGENDAR</b><span>Reserva una sesión</span></div></div>' +
+      '<p class="qr-intro">Abre la cámara de tu celular y apunta a un código.</p>' +
+      '<div class="qr-pair">' +
+      '<div class="qr-col"><div class="qr-code" role="img" aria-label="Código QR que abre esta página en tu celular">' + svg + '</div>' +
+      '<p class="qr-ag-t"><b>ESTA PÁGINA</b><span>Ábrela en tu celular</span></p></div>' +
+      '<div class="qr-col"><div class="qr-code" role="img" aria-label="Código QR que abre la sección de sesiones">' + svgAg + '</div>' +
+      '<p class="qr-ag-t"><b>AGENDAR</b><span>Reserva una sesión</span></p></div>' +
+      '</div>' +
       '</div>';
     document.body.appendChild(box);
     scan(box);
