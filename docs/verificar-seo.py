@@ -155,7 +155,7 @@ check("www.miltondavila.com" not in sm, "el sitemap tiene www")
 check(f"Sitemap: {SITE}/sitemap.xml" in rd("publicar/robots.txt"), "robots.txt no apunta al sitemap")
 ll = rd("publicar/llms.txt")
 check("www.miltondavila.com" not in ll, "llms.txt tiene www")
-check("hub.lasolucionweb.net" in ll, "llms.txt no menciona El HUB")
+check("lasolucionweb.com/es/aplicaciones" in ll,"llms.txt no menciona El HUB")
 
 # manifest e íconos
 mf = json.loads(rd("assets/manifest-v3.webmanifest"))
