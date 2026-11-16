@@ -526,9 +526,14 @@ html.qr-open{overflow:hidden}
 html.i18n-pending body{visibility:hidden}
 .top nav .btn.sm{white-space:nowrap}
 @media(max-width:520px){.langbtn .lt{display:none}.langbtn{padding:8px;min-width:40px;justify-content:center}.top nav{gap:8px}}
-.qr-ag{display:flex;align-items:center;gap:16px;margin:22px 0 0;padding:12px 16px;border:1px solid var(--line);border-radius:14px;background:var(--soft);text-align:left}
-.qr-ag-code{flex:none;width:84px;height:84px;padding:6px;border-radius:10px;background:#fff;line-height:0}
-.qr-ag-code svg{width:100%;height:100%}
-.qr-ag-t b{display:block;color:var(--navy);font-size:.8rem;font-weight:700;letter-spacing:.1em}
-.qr-ag-t span{display:block;margin-top:4px;color:var(--mute);font-size:.85rem}
+.qr-card:has(.qr-pair){width:min(600px,100%);padding:34px 28px 28px}
+.qr-card:has(.qr-pair) h3{margin-bottom:8px}
+.qr-intro{margin:0 auto 20px!important;max-width:none!important}
+.qr-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.qr-col{padding:16px 12px 14px;border:1px solid var(--line);border-radius:16px;background:var(--soft)}
+.qr-pair .qr-code{width:min(100%,200px);height:auto;aspect-ratio:1;padding:12px;margin:0 auto}
+.qr-pair .qr-col p{margin:12px 0 0;max-width:none}
+.qr-ag-t b{display:block;color:var(--navy);font-size:.82rem;font-weight:700;letter-spacing:.1em}
+.qr-ag-t span{display:block;margin-top:3px;font-size:.85rem}
+@media(max-width:560px){.qr-pair{grid-template-columns:1fr}.qr-pair .qr-code{width:min(100%,170px)}}
 

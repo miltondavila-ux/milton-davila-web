@@ -86,12 +86,21 @@
 .cw-msg{background:#f7f8fa;border-color:#e5e7eb;border-left-color:#0076df;color:#071a49}
 .cw-hint a{color:#0076df!important}
 
-/* Opción «Agendar»: tarjeta ancha debajo de los 4 QR (escritorio) / 5.º botón (móvil) */
-.cw-q.ag{grid-column:1/-1;display:grid;grid-template-columns:112px 1fr;grid-template-rows:1fr 1fr;column-gap:18px;align-items:end;text-align:left;padding:14px 18px}
-.cw-q.ag .code{grid-row:1/3;width:112px;margin:0}
-.cw-q.ag b{justify-content:flex-start;margin-top:0;font-size:15px}
-.cw-q.ag small{align-self:start;margin-top:4px;font-size:13px;word-break:normal}
-.cw-qr.one .cw-q.ag{grid-template-columns:84px 1fr;column-gap:14px;padding:12px 14px}
-.cw-qr.one .cw-q.ag .code{width:84px}
-.cw-qr.one .cw-q.ag b{font-size:13px}
-.cw-qr.one .cw-q.ag small{font-size:12px}
+/* 5 opciones sin scroll: escritorio = una fila de 5 tarjetas iguales; 601-860 px = 3 + 2 centradas */
+.cw-qr,.cw-qr.three{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.cw-qr .cw-q{flex:0 0 calc((100% - 48px)/5);min-width:0;padding:12px 8px}
+.cw-q b{font-size:12px;gap:6px;letter-spacing:.08em}
+.cw-q small{font-size:10.5px;word-break:normal;overflow-wrap:anywhere}
+.cw-box:has(.cw-qr:not(.one)){width:min(100%,900px);padding:28px 24px 24px}
+.cw-box:has(.cw-qr:not(.one)) h3{font-size:24px}
+.cw-box:has(.cw-qr:not(.one)) p{margin-bottom:16px}
+.cw-qr.one{display:flex;justify-content:center}
+.cw-qr.one .cw-q{flex:0 0 calc((100% - 12px)/2)}
+.cw-q .code{width:min(100%,150px)}
+.cw-box:has(.one){width:min(100%,560px)}
+@media(max-width:860px){.cw-qr:not(.one) .cw-q{flex-basis:calc((100% - 24px)/3)}.cw-box:has(.cw-qr:not(.one)){width:min(100%,600px)}}
+/* móvil: 5 botones más compactos para que quepan sin scroll */
+.cw-list{gap:9px}
+.cw-opt{padding:11px 20px}
+@media(max-height:700px){.cw-box:before{height:36px;margin-bottom:8px}.cw-box{padding-top:24px}.cw-box h3{font-size:22px}.cw-box p{margin-bottom:12px}.cw-opt{padding:9px 18px}}
+

@@ -40,7 +40,7 @@ for (const f of PAGES) {
   'Pásalo a tu móvil con un código QR', 'Pásalo a móvil', 'Código QR que abre miltondavila.com',
   'Mi tarjeta de presentación', 'Escanéalo para abrir miltondavila.com',
   '¡Pásalo a móvil!', 'Código QR que abre esta página en tu celular',
-  'Abre la cámara de tu celular y apunta al código. Se abre esta misma página.',
+  'Abre la cámara de tu celular y apunta a un código.', 'ESTA PÁGINA', 'Ábrela en tu celular',
   'Agendar sesión', 'Cargando calendario…', 'Abrir en una pestaña nueva',
   'No se pudo cargar el calendario. Usa el enlace de abajo.',
 ].forEach((k) => add(k, 'js'));
