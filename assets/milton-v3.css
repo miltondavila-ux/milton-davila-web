@@ -536,4 +536,7 @@ html.i18n-pending body{visibility:hidden}
 .qr-ag-t b{display:block;color:var(--navy);font-size:.82rem;font-weight:700;letter-spacing:.1em}
 .qr-ag-t span{display:block;margin-top:3px;font-size:.85rem}
 @media(max-width:560px){.qr-pair{grid-template-columns:1fr}.qr-pair .qr-code{width:min(100%,170px)}}
+/* Tarjetas de «Plataformas e iniciativas»: toda la tarjeta es un enlace */
+a.card{color:inherit;text-decoration:none;cursor:pointer}
+a.card:focus-visible{outline:3px solid #ff6a13;outline-offset:3px}
 
