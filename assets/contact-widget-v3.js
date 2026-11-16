@@ -21,9 +21,11 @@
     mobileIntro: 'Elige cómo quieres hablar con Milton.',
     mobileIntroReady: 'Elige cómo quieres enviar tu mensaje.',
     contactPageUrl: '',
+    agendaUrl: 'https://miltondavila.com/#sesiones',   // QR / botón «Agendar»: lleva a la sección de sesiones del home
+    agendaLabel: 'Reserva una sesión',
     askSelector: 'form.ask',
     formSelector: '#never-contact-form',
-    names: { call: 'LLAMAR', sms: 'SMS', wa: 'WHATSAPP', mail: 'EMAIL' }
+    names: { call: 'LLAMAR', sms: 'SMS', wa: 'WHATSAPP', mail: 'EMAIL', agenda: 'AGENDAR' }
   };
 
   var C = CONFIG;
@@ -41,10 +43,11 @@
     sms: '<svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9l-5 4v-4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg>',
     wa: '<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5 14c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg>',
     mail: '<svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7L4.5 7v1.6L12 13.6l7.5-5V7z"/></svg>',
+    agenda: '<svg viewBox="0 0 24 24"><path d="M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3V2zm-2 8v9h14v-9H5z"/></svg>',
     map: '<svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>'
   };
   var names = C.names;
-  var sub = { call: C.callLabel, sms: C.textLabel, wa: C.textLabel, mail: C.emailLabel || C.email };
+  var sub = { call: C.callLabel, sms: C.textLabel, wa: C.textLabel, mail: C.emailLabel || C.email, agenda: C.agendaLabel };
 
   var box = document.createElement('div');
   box.className = 'cw'; box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true');
@@ -67,7 +70,7 @@
   }
 
   function qrCard(key, link, label) {
-    return '<div class="cw-q"><div class="code">' + qr(link) + '</div><b>' + icons[key] + tr(names[key]) + '</b><small>' + label + '</small></div>';
+    return '<div class="cw-q' + (key === 'agenda' ? ' ag' : '') + '"><div class="code">' + qr(link) + '</div><b>' + icons[key] + tr(names[key]) + '</b><small>' + label + '</small></div>';
   }
 
   /* 3. HTML de la ventana principal («YOUR MESSAGE IS READY» / «CONTACT US») */
@@ -80,11 +83,11 @@
     if (isMobile()) {
       h = head + (custom ? C.mobileIntroReady : C.mobileIntro) + '</p><div class="cw-list">' + keys.map(function (k) {
         return '<a class="cw-opt" href="' + L[k] + '"' + (k === 'wa' ? ' target="_blank" rel="noopener"' : '') + '>' + icons[k] + '<span>' + tr(names[k]) + '<small>' + sub[k] + '</small></span></a>';
-      }).join('') + '</div>';
+      }).join('') + '<a class="cw-opt" href="' + C.agendaUrl + '" data-agenda-go>' + icons.agenda + '<span>' + tr(names.agenda) + '<small>' + tr(sub.agenda) + '</small></span></a></div>';
     } else {
       h = head + (custom ? C.qrIntroReady : C.qrIntro) + '</p><div class="cw-qr' + (custom ? ' three' : '') + '">' + keys.map(function (k) {
         return qrCard(k, L[k], sub[k]);
-      }).join('') + '</div>';
+      }).join('') + qrCard('agenda', C.agendaUrl, sub.agenda) + '</div>';
       if (custom) h += '<p class="cw-hint">Or <a href="' + L.wa + '" target="_blank" rel="noopener">open WhatsApp Web</a>.</p>';
       else if (C.contactPageUrl) h += '<p class="cw-hint">Or <a href="' + C.contactPageUrl + '">send us a message here</a>.</p>';
     }
@@ -106,6 +109,14 @@
 
   box.addEventListener('click', function (e) { if (e.target === box || e.target.className === 'cw-x') close(); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+  /* «Agendar» en móvil: si ya estamos en el home, cierra la ventana y baja a la sección de sesiones */
+  box.addEventListener('click', function (ev) {
+    var g = ev.target.closest && ev.target.closest('[data-agenda-go]');
+    var dest = g && document.getElementById(C.agendaUrl.split('#')[1] || 'sesiones');
+    if (!dest) return;
+    ev.preventDefault(); close(); dest.scrollIntoView({ block: 'start' });   // el sitio ya tiene scroll-behavior:smooth en html
+    if (history.replaceState) history.replaceState(null, '', '#' + dest.id);
+  });
   box.addEventListener('click', function (ev) {
     if (C.thankYouUrl && thanks && ev.target.closest && ev.target.closest('.cw-opt, .cw-hint a'))
       setTimeout(function () { location.href = C.thankYouUrl; }, C.thankYouDelayMs);

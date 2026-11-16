@@ -33,7 +33,7 @@ for (const f of PAGES) {
   'Hola Milton, quiero conversar sobre un problema de mi negocio', 'Consulta para Milton Dávila',
   'HABLEMOS DE LO QUE NECESITAS', 'ENCONTREMOS EL SIGUIENTE PASO',
   'Elige una opción para continuar desde tu celular.', 'Tu mensaje está preparado. Elige cómo quieres enviarlo.',
-  'Elige cómo quieres hablar con Milton.', 'Elige cómo quieres enviar tu mensaje.', 'LLAMAR',
+  'Elige cómo quieres hablar con Milton.', 'Elige cómo quieres enviar tu mensaje.', 'LLAMAR', 'AGENDAR', 'Reserva una sesión',
   'Ej.: Mis clientes no me encuentran en Google', 'Ej.: Pierdo clientes por responder tarde',
   'Ej.: Mi equipo copia datos de un sistema a otro', 'Ej.: Quiero usar IA, pero no sé cómo',
   'Ej.: Quiero construir algo propio para mi empresa',
