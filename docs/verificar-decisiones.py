@@ -74,8 +74,9 @@ check('www.miltondavila.com' not in src and 'www.miltondavila.com' not in about_
 check('href="mailto:miltondavila@gmail.com">info@miltondavila.com<' in src, 'El correo del pie debe verse .com y enviar a la bandeja de Gmail del dueño')
 # Sección «Conoce mi HUB» en las dos páginas
 about_hub = open(os.path.join(ROOT, "about-v3.html"), encoding="utf-8").read()
-for nombre, fuente in (("la home", src), ("Sobre mí", about_hub)):
-    check("Conoce <em>mi HUB.</em>" in fuente and 'href="https://www.lasolucionweb.com/es/aplicaciones/"' in fuente, f"Falta la sección «Conoce mi HUB» en {nombre}")
+# La home envía a la landing /hub (2026-11-18); Sobre mí sigue yendo a lasolucionweb.com
+for nombre, fuente, enlace in (("la home", src, '<a class="btn" href="/hub">Conocer mi HUB'), ("Sobre mí", about_hub, 'href="https://www.lasolucionweb.com/es/aplicaciones/"')):
+    check("Conoce <em>mi HUB.</em>" in fuente and enlace in fuente, f"Falta la sección «Conoce mi HUB» en {nombre}")
 # Barra «¿Qué necesitas resolver?» como caja de pregunta (textarea + ejemplos)
 check('<textarea name="q"' in src and 'class="ask-ej"' in src, 'Falta la caja de pregunta con ejemplos en «¿Qué necesitas resolver?»')
 check("f.querySelector('input,textarea')" in open(os.path.join(ROOT, 'assets/contact-widget-v3.js'), encoding="utf-8").read(), 'El kit de contacto no lee el textarea')

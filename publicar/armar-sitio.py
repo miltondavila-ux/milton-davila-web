@@ -29,8 +29,8 @@ convertir("about-v3.html", D + "/about.html")
 # Landing /hub  ->  hub/index.html (rutas absolutas porque vive en una subcarpeta)
 os.makedirs(D + "/hub")
 h = open("hub.html", encoding="utf-8").read()
-h = re.sub(r'(href|src)="(assets/)', r'\1="/\2', h)
-h = h.replace('href="privacy.html"', 'href="/privacy.html"').replace('href="terms.html"', 'href="/terms.html"')
+h = re.sub(r'(?<=["\s,])assets/', '/assets/', h)  # href, src, srcset, imagesrcset
+h = h.replace('href="about.html"', 'href="/about.html"').replace('href="privacy.html"', 'href="/privacy.html"').replace('href="terms.html"', 'href="/terms.html"')
 h = h.replace('<link rel="stylesheet" href="/assets/milton-v3.css">', '<link rel="stylesheet" href="/assets/site.min.css">')
 open(D + "/hub/index.html", "w", encoding="utf-8").write(h)
 for origen, destino in [("publicar/robots.txt", "robots.txt"), ("publicar/sitemap.xml", "sitemap.xml"),

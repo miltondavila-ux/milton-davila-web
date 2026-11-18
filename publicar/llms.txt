@@ -6,6 +6,7 @@
 
 - [Inicio](https://miltondavila.com/): problemas que resuelve, sectores que atiende, sesiones privadas (con agenda), reseñas y preguntas frecuentes.
 - [Quién es Milton Dávila](https://miltondavila.com/about.html): trayectoria, forma de trabajar, plataformas que creó y reseñas.
+- [El HUB](https://miltondavila.com/hub): invitación a conectarse con El HUB (hub.lasolucionweb.net): crear artículos, automatizar redes sociales y crear agentes de IA.
 - [Blog](https://blog.miltondavila.com): artículos y guías de marketing digital y automatización.
 
 ## Qué hace
@@ -25,7 +26,7 @@ Bienes raíces (Estados Unidos e Hispanoamérica), seguros, abogados, salud (mé
 
 10MinutesWebsite, La Solución Web, El HUB y SEO Total.
 
-El HUB (https://www.lasolucionweb.com/es/aplicaciones/) reúne en un solo lugar las aplicaciones que Milton construyó para dar productividad y posicionamiento a las empresas: crear artículos, automatizar redes sociales y crear agentes de IA para atender clientes.
+El HUB (https://miltondavila.com/hub; acceso en https://hub.lasolucionweb.net/; aplicaciones en https://www.lasolucionweb.com/es/aplicaciones/) reúne en un solo lugar las aplicaciones que Milton construyó para dar productividad y posicionamiento a las empresas: crear artículos, automatizar redes sociales y crear agentes de IA para atender clientes.
 
 ## Sesiones privadas
 
