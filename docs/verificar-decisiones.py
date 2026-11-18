@@ -75,7 +75,7 @@ check('href="mailto:miltondavila@gmail.com">info@miltondavila.com<' in src, 'El 
 # Sección «Conoce mi HUB» en las dos páginas
 about_hub = open(os.path.join(ROOT, "about-v3.html"), encoding="utf-8").read()
 # La home envía a la landing /hub (2026-11-18); Sobre mí sigue yendo a lasolucionweb.com
-for nombre, fuente, enlace in (("la home", src, '<a class="btn" href="/hub">Conocer mi HUB'), ("Sobre mí", about_hub, 'href="https://www.lasolucionweb.com/es/aplicaciones/"')):
+for nombre, fuente, enlace in (("la home", src, '<a class="btn" href="/hub" target="_blank" rel="noopener">Conocer mi HUB'), ("Sobre mí", about_hub, 'href="https://www.lasolucionweb.com/es/aplicaciones/"')):
     check("Conoce <em>mi HUB.</em>" in fuente and enlace in fuente, f"Falta la sección «Conoce mi HUB» en {nombre}")
 # Barra «¿Qué necesitas resolver?» como caja de pregunta (textarea + ejemplos)
 check('<textarea name="q"' in src and 'class="ask-ej"' in src, 'Falta la caja de pregunta con ejemplos en «¿Qué necesitas resolver?»')
