@@ -26,6 +26,13 @@ def convertir(src, dst):
 
 convertir("milton-v3.html", D + "/index.html")
 convertir("about-v3.html", D + "/about.html")
+# Landing /hub  ->  hub/index.html (rutas absolutas porque vive en una subcarpeta)
+os.makedirs(D + "/hub")
+h = open("hub.html", encoding="utf-8").read()
+h = re.sub(r'(href|src)="(assets/)', r'\1="/\2', h)
+h = h.replace('href="privacy.html"', 'href="/privacy.html"').replace('href="terms.html"', 'href="/terms.html"')
+h = h.replace('<link rel="stylesheet" href="/assets/milton-v3.css">', '<link rel="stylesheet" href="/assets/site.min.css">')
+open(D + "/hub/index.html", "w", encoding="utf-8").write(h)
 for origen, destino in [("publicar/robots.txt", "robots.txt"), ("publicar/sitemap.xml", "sitemap.xml"),
                         ("publicar/llms.txt", "llms.txt"), ("publicar/404.html", "404.html"),
                         ("assets/icons/favicon.ico", "favicon.ico"),
@@ -50,7 +57,7 @@ for f in ("index.html", "about.html"):
 
 # Copiar solo lo que se usa
 refs = set()
-fuentes = [D + "/index.html", D + "/about.html", D + "/manifest.webmanifest", D + "/assets/site.min.css",
+fuentes = [D + "/index.html", D + "/about.html", D + "/hub/index.html", D + "/manifest.webmanifest", D + "/assets/site.min.css",
            D + "/assets/contact-widget.min.js", "assets/agenda-modal.js", "assets/menu-v3.js", "assets/i18n.js"]
 for p in fuentes:
     t = open(p, encoding="utf-8").read()
