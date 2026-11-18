@@ -22,4 +22,15 @@
       <image:title>Milton Dávila: sistemas e IA, de la estrategia a la operación</image:title>
     </image:image>
   </url>
+  <url>
+    <loc>https://miltondavila.com/hub</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miltondavila.com/hub"/>
+    <image:image>
+      <image:loc>https://miltondavila.com/assets/og/og-hub.jpg</image:loc>
+      <image:title>Panel «Mis aplicaciones» de El HUB de Milton Dávila</image:title>
+    </image:image>
+  </url>
 </urlset>
