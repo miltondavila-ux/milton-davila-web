@@ -33,4 +33,15 @@
       <image:title>Panel «Mis aplicaciones» de El HUB de Milton Dávila</image:title>
     </image:image>
   </url>
+  <url>
+    <loc>https://miltondavila.com/programa-de-posicionamiento</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miltondavila.com/programa-de-posicionamiento"/>
+    <image:image>
+      <image:loc>https://miltondavila.com/assets/og/og-home.jpg</image:loc>
+      <image:title>Programa de Posicionamiento de Milton Dávila: aparece en Google, Bing y la IA</image:title>
+    </image:image>
+  </url>
 </urlset>
